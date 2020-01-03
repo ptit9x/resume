@@ -1,29 +1,44 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
-import A from 'components/A';
-import LocaleToggle from 'containers/LocaleToggle';
-import Wrapper from './Wrapper';
-import messages from './messages';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        <FormattedMessage
-          {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        />
-      </section>
-    </Wrapper>
+    <footer className="footer">
+      <div className="footer-social">
+        <ul className="social">
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-facebook" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-twitter" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-linkedin" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-google-plus" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-dribbble" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="ripple-centered" target="_blank">
+              <i className="rsicon rsicon-instagram" />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </footer>
   );
 }
 
