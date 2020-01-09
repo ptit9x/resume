@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import photo from '../../images/uploads/profile.png';
+import photo from '../../assets/images/uploads/profile.png';
 
 function About() {
   return (

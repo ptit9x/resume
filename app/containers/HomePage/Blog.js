@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import thumb1 from '../../images/uploads/thumb-449x286-1.jpg';
-import thumb2 from '../../images/uploads/thumb-449x286-5.jpg';
+import thumb1 from '../../assets/images/uploads/thumb-449x286-1.jpg';
+import thumb2 from '../../assets/images/uploads/thumb-449x286-5.jpg';
 
 function Blog() {
   return (

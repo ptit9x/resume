@@ -1,5 +1,5 @@
 import React from 'react';
-import portfolio1 from '../../images/uploads/portfolio/portfolio-thumb-05-610x600.jpg';
+import portfolio1 from '../../assets/images/uploads/portfolio/portfolio-thumb-05-610x600.jpg';
 
 function Portfolio() {
   return (

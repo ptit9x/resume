@@ -14,8 +14,8 @@ function Skills() {
                   <span className="bar-value">80%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="51%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '51%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>
@@ -28,8 +28,8 @@ function Skills() {
                   <span className="bar-value">52%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="67%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '67%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>
@@ -44,8 +44,8 @@ function Skills() {
                   <span className="bar-value">61%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="79%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '79%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>
@@ -58,8 +58,8 @@ function Skills() {
                   <span className="bar-value">89%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="67%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '67%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>
@@ -74,8 +74,8 @@ function Skills() {
                   <span className="bar-value">99%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="54%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '54%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>
@@ -88,8 +88,8 @@ function Skills() {
                   <span className="bar-value">97%</span>
                 </div>
                 <div className="bar-line">
-                  <span className="bar-fill" data-width="80%">
-                    &nbpsp;
+                  <span className="bar-fill" style={{ width: '80%' }}>
+                    &nbsp;
                   </span>
                 </div>
               </div>

@@ -13,6 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
+import MobileNav from 'components/MobileNav';
 import Footer from 'components/Footer';
 import ScrollTop from 'components/ScrollTop';
 import OperationPanel from 'components/OperationPanel';
@@ -26,7 +27,7 @@ export default function App() {
       >
         <meta name="description" content="This is all about me" />
       </Helmet>
-      <div className="mobile-nav" />
+      <MobileNav />
       <div className="sidebar sidebar-fixed" />
       <div className="wrapper">
         <Header />

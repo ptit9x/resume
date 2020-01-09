@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import './header.css';
+import messages from './messages';
 
 function Header() {
   const offset = -50;
@@ -23,7 +25,7 @@ function Header() {
           <div className="row">
             <div className="col-sm-3 col-xs-6">
               <a className="logo" onClick={scrollToTop}>
-                <span>RS</span>card
+                <span>CV</span>HuynhDN
               </a>
             </div>
             <div className="col-sm-9 col-xs-6">
@@ -43,7 +45,10 @@ function Header() {
                         onSetInactive={handleSetInactive}
                         ignoreCancelEvents={false}
                       >
-                        About <span />
+                        <FormattedMessage {...messages.about}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -58,7 +63,10 @@ function Header() {
                         onSetActive={handleSetActive}
                         onSetInactive={handleSetInactive}
                       >
-                        Skills <span />
+                        <FormattedMessage {...messages.skills}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -73,7 +81,10 @@ function Header() {
                         onSetActive={handleSetActive}
                         onSetInactive={handleSetInactive}
                       >
-                        Portfolio <span />
+                        <FormattedMessage {...messages.portfolio}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>{' '}
                     </li>
                     <li>
@@ -87,7 +98,10 @@ function Header() {
                         duration={duration}
                         onSetActive={handleSetActive}
                       >
-                        Experience <span />
+                        <FormattedMessage {...messages.experience}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -101,7 +115,10 @@ function Header() {
                         duration={duration}
                         onSetActive={handleSetActive}
                       >
-                        References <span />
+                        <FormattedMessage {...messages.references}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -115,7 +132,10 @@ function Header() {
                         duration={duration}
                         onSetActive={handleSetActive}
                       >
-                        Calendar <span />
+                        <FormattedMessage {...messages.calendar}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -129,7 +149,10 @@ function Header() {
                         duration={duration}
                         onSetActive={handleSetActive}
                       >
-                        Blog <span />
+                        <FormattedMessage {...messages.blog}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                       </Link>
                     </li>
                     <li>
@@ -143,13 +166,18 @@ function Header() {
                         duration={duration}
                         onSetActive={handleSetActive}
                       >
-                        Contact <span />
+                        <FormattedMessage {...messages.contact}>
+                          {txt => txt}
+                        </FormattedMessage>{' '}
+                        <span />
                         <span />
                       </Link>
                     </li>
                   </ul>
                 </nav>
-                <button type="button" className="btn-mobile btn-mobile-nav">Menu</button>
+                <button type="button" className="btn-mobile btn-mobile-nav">
+                  Menu
+                </button>
                 <button type="button" className="btn-sidebar btn-sidebar-open">
                   <i className="rsicon rsicon-menu" />
                 </button>

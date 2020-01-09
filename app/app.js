@@ -26,13 +26,13 @@ import LanguageProvider from 'containers/LanguageProvider';
 import '!file-loader?name=[name].[ext]!./images/favicon.png';
 import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
 
-import 'css/fonts/map-icons/fonts/map-icons.ttf';
-import 'css/fonts/map-icons/css/map-icons.min.css';
-import 'css/fonts/icomoon/fonts/icomoon.ttf';
-import 'css/fonts/icomoon/style.css';
-import 'css/option-panel.css';
-import 'css/style.css';
-import 'css/theme-color.css';
+import 'assets/css/fonts/map-icons/fonts/map-icons.ttf';
+import 'assets/css/fonts/map-icons/css/map-icons.min.css';
+import 'assets/css/fonts/icomoon/fonts/icomoon.ttf';
+import 'assets/css/fonts/icomoon/style.css';
+import 'assets/css/option-panel.css';
+import 'assets/css/style.css';
+import 'assets/css/theme-color.css';
 
 import configureStore from './configureStore';
 

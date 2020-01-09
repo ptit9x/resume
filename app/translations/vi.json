@@ -1,0 +1,10 @@
+{
+  "boilerplate.components.Header.about": "Giới thiệu",
+  "boilerplate.components.Header.skills": "Kĩ năng",
+  "boilerplate.components.Header.portfolio": "Portfolio",
+  "boilerplate.components.Header.experience": "Kinh nghiệm",
+  "boilerplate.components.Header.references": "Người giới thiệu",
+  "boilerplate.components.Header.calendar": "Lịch",
+  "boilerplate.components.Header.blog": "Blog",
+  "boilerplate.components.Header.contact": "Liên hệ"
+}

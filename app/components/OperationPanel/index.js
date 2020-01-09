@@ -35,6 +35,7 @@ function OperationPanel() {
     setShowSetting(!showSetting);
   };
   const toggleSkin = () => {
+    console.log('aaaaaaaaaaaaaa');
     setLightThemeSkin(!lightThemeSkin);
   };
   const changeColor = color => {
@@ -62,7 +63,12 @@ function OperationPanel() {
             <button className="op-btn" data-value="light" onClick={toggleSkin}>
               Light
             </button>
-            <button type="button" className="op-btn" data-value="dark" onClick={toggleSkin}>
+            <button
+              type="button"
+              className="op-btn"
+              data-value="dark"
+              onClick={toggleSkin}
+            >
               Dark
             </button>
             <div className="op-btn-bar">
