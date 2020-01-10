@@ -2106,6 +2106,7 @@ body {
             background-color: #ebecee; }
   .nav-wrap .btn-mobile-nav,
   .nav-wrap .btn-sidebar-open {
+    text-transform: uppercase;
     border: 0;
     margin: 0;
     padding: 0;

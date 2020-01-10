@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Nagivation from '../Navigation';
 
 function MobileNav() {
   return (
@@ -21,71 +21,7 @@ function MobileNav() {
             dir="ltr"
           >
             <nav id="mobile-nav" className="nav">
-              <ul className="clearfix">
-                <li className="active">
-                  <a href="#about">About</a>
-                </li>
-                <li>
-                  <a href="#skills">Skills</a>
-                </li>
-                <li className>
-                  <a href="#portfolio">Portfolio</a>{' '}
-                </li>
-                <li>
-                  <a href="#experience">Experience</a>
-                </li>
-                <li className>
-                  <a href="#references">References</a>
-                </li>
-                <li>
-                  <a href="category.html">Blog</a>
-                  <ul>
-                    <li>
-                      <a href="single-image.html">Image Post</a>
-                    </li>
-                    <li>
-                      <a href="single-slider.html">Slider Post</a>
-                    </li>
-                    <li>
-                      <a href="single-video.html">Video Post</a>
-                    </li>
-                    <li>
-                      <a href="single-audio.html">Audio Post</a>
-                    </li>
-                    <li>
-                      <a href="single-vimeo.html">Vimeo Post</a>
-                    </li>
-                    <li>
-                      <a href="single-youtube.html">Youtube Post</a>
-                    </li>
-                    <li>
-                      <a href="single-dailymotion.html">Dailymotion Post</a>
-                    </li>
-                    <li>
-                      <a href="single.html">Without Media Post</a>
-                    </li>
-                    <li>
-                      <a href="typography.html">Typography Page</a>
-                    </li>
-                    <li>
-                      <a href="icons.html">Icons Page</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404 Page</a>
-                    </li>
-                  </ul>
-                </li>
-                <li className>
-                  <a href="#calendar">
-                    Calendar <span />
-                  </a>
-                </li>
-                <li className>
-                  <a href="#contact">
-                    Contact <span />
-                  </a>
-                </li>
-              </ul>
+              <Nagivation />
             </nav>
           </div>
           <div
@@ -103,7 +39,6 @@ function MobileNav() {
                   top: '0px',
                   height: '0px',
                 }}
-                onContextMenu="return false;"
               >
                 <div
                   className="mCSB_dragger_bar"

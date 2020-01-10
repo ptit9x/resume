@@ -23,7 +23,7 @@ import App from 'containers/App';
 import LanguageProvider from 'containers/LanguageProvider';
 
 // Load the favicon and the .htaccess file
-import '!file-loader?name=[name].[ext]!./images/favicon.png';
+import '!file-loader?name=[name].[ext]!./assets/images/favicon.png';
 import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
 
 import 'assets/css/fonts/map-icons/fonts/map-icons.ttf';

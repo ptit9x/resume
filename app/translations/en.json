@@ -1,10 +1,20 @@
 {
-  "boilerplate.components.Header.about": "About",
-  "boilerplate.components.Header.skills": "Skills",
-  "boilerplate.components.Header.portfolio": "Portfolio",
-  "boilerplate.components.Header.experience": "Experience",
-  "boilerplate.components.Header.references": "References",
-  "boilerplate.components.Header.calendar": "Calendar",
-  "boilerplate.components.Header.blog": "Blog",
-  "boilerplate.components.Header.contact": "Contact"
+  "boilerplate.components.Navigation.about": "About",
+  "boilerplate.components.Navigation.skills": "Skills",
+  "boilerplate.components.Navigation.portfolio": "Portfolio",
+  "boilerplate.components.Navigation.experience": "Experience",
+  "boilerplate.components.Navigation.references": "References",
+  "boilerplate.components.Navigation.calendar": "Calendar",
+  "boilerplate.components.Navigation.blog": "Blog",
+  "boilerplate.components.Navigation.contact": "Contact",
+  "boilerplate.components.HomePage.About.hello": "Hello",
+  "boilerplate.components.HomePage.About.iam": "I'm ",
+  "boilerplate.components.HomePage.About.myname": "Do Ngoc Huynh",
+  "boilerplate.components.HomePage.About.position": "Full Stack Developer",
+  "boilerplate.components.HomePage.About.labelAge": "Age",
+  "boilerplate.components.HomePage.About.labelAddress": "Address",
+  "boilerplate.components.HomePage.About.labelEmail": "E-mail",
+  "boilerplate.components.HomePage.About.labelPhone": "Phone",
+  "boilerplate.components.HomePage.About.downloadcv": "Download Resume",
+  "boilerplate.components.HomePage.About.introduction": "Hello! I’m Do Ngoc Huynh. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations."
 }

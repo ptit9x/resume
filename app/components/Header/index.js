@@ -1,22 +1,29 @@
-import React, { useState } from 'react';
-import { FormattedMessage } from 'react-intl';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import './header.css';
-import messages from './messages';
+import React, { useState, memo } from 'react';
+import PropTypes from 'prop-types';
+import { animateScroll as scroll } from 'react-scroll';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 
-function Header() {
-  const offset = -50;
-  const duration = 300;
-  const [fixedMenu, setFixedMenu] = useState(false);
+import { useInjectReducer } from 'utils/injectReducer';
+import { makeSelectLocale } from '../../containers/LanguageProvider/selectors';
+import { changeLocale } from '../../containers/LanguageProvider/actions';
+import reducer from '../../containers/LanguageProvider/reducer';
+import Navigation from '../Navigation';
+import './header.css';
+import { makeSelectFixedMenu } from '../Navigation/selectors';
+
+const key = 'header';
+
+export function Header({
+  fixedMenu,
+  locale,
+  onChangeLocale,
+}) {
+  useInjectReducer({ key, reducer });
+  const [activeMenuMobile, setActiveMenuMobile] = useState(false); 
   const scrollToTop = () => scroll.scrollToTop();
-  const handleSetActive = () => setFixedMenu(true);
-  const handleSetInactive = () => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY === 0) {
-        setFixedMenu(false);
-      }
-    });
-  };
+  const onToggleMobileMenu = () => setActiveMenuMobile(!activeMenuMobile);
   return (
     <header className="header">
       <div className="head-bg" />
@@ -24,162 +31,20 @@ function Header() {
         <div className="head-bar-inner">
           <div className="row">
             <div className="col-sm-3 col-xs-6">
-              <a className="logo" onClick={scrollToTop}>
+              <a className="logo" onClick={scrollToTop} href="/">
                 <span>CV</span>HuynhDN
               </a>
             </div>
             <div className="col-sm-9 col-xs-6">
               <div className="nav-wrap">
                 <nav id="nav" className="nav">
-                  <ul className="clearfix">
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="about"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                        ignoreCancelEvents={false}
-                      >
-                        <FormattedMessage {...messages.about}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="skills"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                      >
-                        <FormattedMessage {...messages.skills}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="portfolio"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                      >
-                        <FormattedMessage {...messages.portfolio}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>{' '}
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="experience"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        <FormattedMessage {...messages.experience}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="references"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        <FormattedMessage {...messages.references}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="calendar"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        <FormattedMessage {...messages.calendar}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="blog"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        <FormattedMessage {...messages.blog}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="contact"
-                        to="contact"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        <FormattedMessage {...messages.contact}>
-                          {txt => txt}
-                        </FormattedMessage>{' '}
-                        <span />
-                        <span />
-                      </Link>
-                    </li>
-                  </ul>
+                  <Navigation />
                 </nav>
-                <button type="button" className="btn-mobile btn-mobile-nav">
+                <button type="button" className="btn-mobile btn-mobile-nav" onClick={onToggleMobileMenu}>
                   Menu
                 </button>
-                <button type="button" className="btn-sidebar btn-sidebar-open">
-                  <i className="rsicon rsicon-menu" />
+                <button type="button" className="btn-primary btn-sidebar-open" onClick={() => onChangeLocale(locale === 'en' ? 'vi' : 'en')}>
+                  {locale}
                 </button>
               </div>
             </div>
@@ -190,4 +55,29 @@ function Header() {
   );
 }
 
-export default Header;
+Header.propTypes = {
+  locale: PropTypes.string,
+  fixedMenu: PropTypes.bool,
+  onChangeLocale: PropTypes.func.isRequired,
+}
+
+const mapStateToProps = createStructuredSelector({
+  fixedMenu: makeSelectFixedMenu(),
+  locale: makeSelectLocale(),
+});
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onChangeLocale: (lang) => dispatch(changeLocale(lang)),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
+
+export default compose(
+  withConnect,
+  memo,
+)(Header);
