@@ -15,7 +15,6 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import FontFaceObserver from 'fontfaceobserver';
 import history from 'utils/history';
-import 'sanitize.css/sanitize.css';
 
 // Import root app
 import App from 'containers/App';
@@ -24,8 +23,16 @@ import App from 'containers/App';
 import LanguageProvider from 'containers/LanguageProvider';
 
 // Load the favicon and the .htaccess file
-import '!file-loader?name=[name].[ext]!./images/favicon.ico';
+import '!file-loader?name=[name].[ext]!./images/favicon.png';
 import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
+
+import 'css/fonts/map-icons/fonts/map-icons.ttf';
+import 'css/fonts/map-icons/css/map-icons.min.css';
+import 'css/fonts/icomoon/fonts/icomoon.ttf';
+import 'css/fonts/icomoon/style.css';
+import 'css/option-panel.css';
+import 'css/style.css';
+import 'css/theme-color.css';
 
 import configureStore from './configureStore';
 

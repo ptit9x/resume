@@ -5,17 +5,18 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
-import H1 from 'components/H1';
-import messages from './messages';
+import { Link } from 'react-router-dom';
 
 export default function NotFound() {
   return (
-    <article>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-    </article>
+    <div className="page-404">
+      <h2>
+        4<span>0</span>4
+      </h2>
+      <p>Ooops! This page doesn't even exist</p>
+      <Link className="btn btn-lg btn-border" to="/">
+        Go To The Homepage?
+      </Link>
+    </div>
   );
 }
