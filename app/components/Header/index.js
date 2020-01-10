@@ -1,29 +1,22 @@
-import React, { useState, memo } from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { animateScroll as scroll } from 'react-scroll';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { useInjectReducer } from 'utils/injectReducer';
 import { makeSelectLocale } from '../../containers/LanguageProvider/selectors';
 import { changeLocale } from '../../containers/LanguageProvider/actions';
-import reducer from '../../containers/LanguageProvider/reducer';
 import Navigation from '../Navigation';
 import './header.css';
 import { makeSelectFixedMenu } from '../Navigation/selectors';
-
-const key = 'header';
 
 export function Header({
   fixedMenu,
   locale,
   onChangeLocale,
 }) {
-  useInjectReducer({ key, reducer });
-  const [activeMenuMobile, setActiveMenuMobile] = useState(false); 
   const scrollToTop = () => scroll.scrollToTop();
-  const onToggleMobileMenu = () => setActiveMenuMobile(!activeMenuMobile);
   return (
     <header className="header">
       <div className="head-bg" />
@@ -40,10 +33,18 @@ export function Header({
                 <nav id="nav" className="nav">
                   <Navigation />
                 </nav>
-                <button type="button" className="btn-mobile btn-mobile-nav" onClick={onToggleMobileMenu}>
+                <button
+                  type="button"
+                  className="btn-mobile btn-mobile-nav"
+                  // onClick={() => onChangeActiveMobile(!activeMenuMobile)}
+                >
                   Menu
                 </button>
-                <button type="button" className="btn-primary btn-sidebar-open" onClick={() => onChangeLocale(locale === 'en' ? 'vi' : 'en')}>
+                <button
+                  type="button"
+                  className="btn-primary btn-sidebar-open"
+                  onClick={() => onChangeLocale(locale === 'en' ? 'vi' : 'en')}
+                >
                   {locale}
                 </button>
               </div>
@@ -59,7 +60,7 @@ Header.propTypes = {
   locale: PropTypes.string,
   fixedMenu: PropTypes.bool,
   onChangeLocale: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   fixedMenu: makeSelectFixedMenu(),
@@ -68,14 +69,14 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeLocale: (lang) => dispatch(changeLocale(lang)),
+    onChangeLocale: lang => dispatch(changeLocale(lang)),
   };
 }
 
 const withConnect = connect(
   mapStateToProps,
   mapDispatchToProps,
-)
+);
 
 export default compose(
   withConnect,

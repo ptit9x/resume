@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 
-import { useInjectReducer } from 'utils/injectReducer';
+import { useInjectReducer } from '../../utils/injectReducer';
 import reducer from './reducer';
 import { changeFixedMenu } from './actions';
 import { makeSelectFixedMenu } from './selectors';
@@ -17,7 +17,7 @@ const key = 'navigation';
 export function Navigation({
   fixedMenu,
   onChangeFixedMenu,
-  onChangeFixedMenuScrollTop
+  onChangeFixedMenuScrollTop,
 }) {
   useInjectReducer({ key, reducer });
   const offset = -50;
@@ -37,9 +37,7 @@ export function Navigation({
           onSetInactive={onChangeFixedMenuScrollTop}
           ignoreCancelEvents={false}
         >
-          <FormattedMessage {...messages.about}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.about}>{txt => txt}</FormattedMessage>{' '}
           <span />
         </Link>
       </li>
@@ -55,9 +53,7 @@ export function Navigation({
           onSetActive={() => onChangeFixedMenu(fixedMenu)}
           onSetInactive={onChangeFixedMenuScrollTop}
         >
-          <FormattedMessage {...messages.skills}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.skills}>{txt => txt}</FormattedMessage>{' '}
           <span />
         </Link>
       </li>
@@ -145,9 +141,7 @@ export function Navigation({
           onSetActive={() => onChangeFixedMenu(fixedMenu)}
           onSetInactive={onChangeFixedMenuScrollTop}
         >
-          <FormattedMessage {...messages.blog}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.blog}>{txt => txt}</FormattedMessage>{' '}
           <span />
         </Link>
       </li>
@@ -167,19 +161,17 @@ export function Navigation({
             {txt => txt}
           </FormattedMessage>{' '}
           <span />
-          <span />
         </Link>
       </li>
     </ul>
   );
 }
 
-
 Navigation.propTypes = {
   fixedMenu: PropTypes.bool,
   onChangeFixedMenu: PropTypes.func.isRequired,
   onChangeFixedMenuScrollTop: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   fixedMenu: makeSelectFixedMenu(),
@@ -187,14 +179,18 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeFixedMenu: (v) => dispatch(changeFixedMenu(!v)),
+    onChangeFixedMenu: v => {
+      console.log("11111111111");
+      // hide menu mobile when click
+    },
     onChangeFixedMenuScrollTop: () => {
       window.addEventListener('scroll', () => {
         if (window.scrollY === 0) {
-          return dispatch(changeFixedMenu(true))
+          return dispatch(changeFixedMenu(false));
+        } else {
+          return dispatch(changeFixedMenu(true));
         }
       });
-      // return dispatch(changeFixedMenu(true));
     },
   };
 }
@@ -202,7 +198,7 @@ export function mapDispatchToProps(dispatch) {
 const withConnect = connect(
   mapStateToProps,
   mapDispatchToProps,
-)
+);
 
 export default compose(
   withConnect,

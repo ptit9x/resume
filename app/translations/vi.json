@@ -16,5 +16,8 @@
   "boilerplate.components.HomePage.About.labelEmail": "E-mail",
   "boilerplate.components.HomePage.About.labelPhone": "Điện thoại",
   "boilerplate.components.HomePage.About.downloadcv": "Tải xuống CV",
-  "boilerplate.components.HomePage.About.introduction": "Xin chào! Tôi là Đỗ Ngọc Huỳnh. Senior Web Developer. Tôi có kinh nghiệm với tất cả các giai đoạn của chu trình phát triển cho các dự án website. Thành thạo nhiều ngôn ngữ lập trình như Javascript (Nodejs, TypeScript), PHP... Có kiến thức trong quản lý dự án và biết cách nói chuyện với khách hàng."
+  "boilerplate.components.HomePage.About.introduction": "Xin chào! Tôi là Đỗ Ngọc Huỳnh. Senior Web Developer. Tôi có kinh nghiệm với tất cả các giai đoạn của chu trình phát triển cho các dự án website. Thành thạo nhiều ngôn ngữ lập trình như Javascript (Nodejs, TypeScript), PHP... Có kiến thức trong quản lý dự án và biết cách nói chuyện với khách hàng.",
+  "boilerplate.components.HomePage.Skills.skill": "Kĩ năng",
+  "boilerplate.components.HomePage.Portfolio.title": "Portfolio",
+  "boilerplate.components.HomePage.Portfolio.all": "Tất cả"
 }

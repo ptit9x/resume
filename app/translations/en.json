@@ -16,5 +16,8 @@
   "boilerplate.components.HomePage.About.labelEmail": "E-mail",
   "boilerplate.components.HomePage.About.labelPhone": "Phone",
   "boilerplate.components.HomePage.About.downloadcv": "Download Resume",
-  "boilerplate.components.HomePage.About.introduction": "Hello! I’m Do Ngoc Huynh. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations."
+  "boilerplate.components.HomePage.About.introduction": "Hello! I’m Do Ngoc Huynh. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.",
+  "boilerplate.components.HomePage.Skills.skill": "Professional Skills",
+  "boilerplate.components.HomePage.Portfolio.title": "Portfolio",
+  "boilerplate.components.HomePage.Portfolio.all": "all"
 }

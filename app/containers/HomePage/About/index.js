@@ -12,8 +12,8 @@ function About() {
     address: 'FLC My Dinh, 36 Pham Hung, My Dinh 2, Ha Noi',
     email: 'ngochuynh1991@gmail.com',
     phone: '+84374539633',
-    textPhone: '+84 37 453 9633'
-  }
+    textPhone: '+84 37 453 9633',
+  };
 
   return (
     <section id="about" className="section section-about">
@@ -79,7 +79,9 @@ function About() {
                       </FormattedMessage>{' '}
                     </strong>
                     <span className="cont">
-                      <Link to={`tel:${profile.email}`}>{profile.textPhone}</Link>
+                      <Link to={`tel:${profile.email}`}>
+                        {profile.textPhone}
+                      </Link>
                     </span>
                   </li>
                   {/* <li className="clearfix">
@@ -101,10 +103,7 @@ function About() {
         </div>
         <div className="section-txt-btn">
           <p>
-            <Link
-              className="btn btn-lg btn-border ripple"
-              to="#"
-            >
+            <Link className="btn btn-lg btn-border ripple" to="#">
               <FormattedMessage {...messages.downloadcv}>
                 {txt => txt}
               </FormattedMessage>{' '}

@@ -5,7 +5,7 @@ import { initialState } from './reducer';
  * Direct selector to the navigation
  */
 
-const selectFixedMenu = state => state.fixedMenu || initialState;
+const selectFixedMenu = state => state.navigation || initialState;
 
 /**
  * Select the fixed menu

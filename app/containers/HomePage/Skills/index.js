@@ -1,10 +1,16 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
 
 function Skills() {
   return (
     <section id="skills" className="section section-skills">
       <div className="animate-up">
-        <h2 className="section-title">Professional Skills</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.skill}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div className="section-box">
           <div className="row">
             <div className="col-sm-6">

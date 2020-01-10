@@ -47,5 +47,5 @@ export default defineMessages({
   introduction: {
     id: `${scope}.introduction`,
     defaultMessage: '',
-  }
+  },
 });
