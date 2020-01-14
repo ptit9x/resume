@@ -1,16 +1,24 @@
 import React from 'react';
-import portfolio1 from '../../images/uploads/portfolio/portfolio-thumb-05-610x600.jpg';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+import portfolio1 from '../../../assets/images/uploads/portfolio/portfolio-thumb-05-610x600.jpg';
 
 function Portfolio() {
   return (
     <section id="portfolio" className="section section-portfolio">
       <div className="animate-up">
-        <h2 className="section-title">Portfolio</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.title}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div className="filter">
           <div className="filter-inner">
             <div className="filter-btn-group">
               <button data-filter="*" className="active">
-                All
+                <FormattedMessage {...messages.all}>
+                  {txt => txt}
+                </FormattedMessage>{' '}
               </button>
               <button data-filter=".photography">Photography</button>
               <button data-filter=".nature">Nature</button>
@@ -73,7 +81,7 @@ function Portfolio() {
                 <div
                   className="inline-embed"
                   data-embed-type="image"
-                  data-embed-url="../../imgages/uploads/portfolio/portfolio-thumb-05-large.jpg"
+                  data-embed-url="\.\./\.\./assets/imgages/uploads/portfolio/portfolio-thumb-05-large.jpg"
                 />
                 <div className="inline-cont">
                   <h2 className="inline-title">
@@ -96,7 +104,7 @@ function Portfolio() {
                 <div
                   className="inline-embed"
                   data-embed-type="image"
-                  data-embed-url="../../imgages/uploads/portfolio/portfolio-thumb-01-large.jpg"
+                  data-embed-url="\.\./\.\./assets/imgages/uploads/portfolio/portfolio-thumb-01-large.jpg"
                 />
                 <div className="inline-cont">
                   <div className="inline-text">

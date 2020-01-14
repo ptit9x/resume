@@ -6,27 +6,36 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
+import MobileNav from 'components/MobileNav';
 import Footer from 'components/Footer';
 import ScrollTop from 'components/ScrollTop';
 import OperationPanel from 'components/OperationPanel';
 
-export default function App() {
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { makeSelectMobileNavOpen } from '../../components/Navigation/selectors';
+
+export function App({
+  mobileNavMenu,
+}) {
   return (
-    <div className="home header-has-img">
+    <div className={`home header-has-img ${mobileNavMenu ? 'mobile-nav-opened' : ''}`}>
       <Helmet
         titleTemplate="%s - My Résumé"
         defaultTitle="React.js This is all about me"
       >
         <meta name="description" content="This is all about me" />
       </Helmet>
-      <div className="mobile-nav" />
+      <MobileNav />
       <div className="sidebar sidebar-fixed" />
       <div className="wrapper">
         <Header />
@@ -45,3 +54,20 @@ export default function App() {
     </div>
   );
 }
+
+App.propTypes = {
+  mobileNavMenu: PropTypes.bool,
+};
+
+const mapStateToProps = createStructuredSelector({
+  mobileNavMenu: makeSelectMobileNavOpen(),
+});
+
+const withConnect = connect(
+  mapStateToProps,
+);
+
+export default compose(
+  withConnect,
+  memo,
+)(App);

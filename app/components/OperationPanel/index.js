@@ -62,7 +62,12 @@ function OperationPanel() {
             <button className="op-btn" data-value="light" onClick={toggleSkin}>
               Light
             </button>
-            <button type="button" className="op-btn" data-value="dark" onClick={toggleSkin}>
+            <button
+              type="button"
+              className="op-btn"
+              data-value="dark"
+              onClick={toggleSkin}
+            >
               Dark
             </button>
             <div className="op-btn-bar">
