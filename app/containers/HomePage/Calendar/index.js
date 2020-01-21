@@ -4,7 +4,11 @@ function Calendar() {
   return (
     <section id="calendar" className="section section-calendar">
       <div className="animate-up">
-        <h2 className="section-title">Availability Calendar</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.title}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div className="calendar-busy" data-weekstart="monday">
           <div
             className="calendar-today"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import thumb1 from '../../../assets/images/uploads/thumb-449x286-1.jpg';
 import thumb2 from '../../../assets/images/uploads/thumb-449x286-5.jpg';
@@ -7,7 +8,11 @@ function Blog() {
   return (
     <section id="blog" className="section section-blog">
       <div className="animate-up">
-        <h2 className="section-title">From The Blog</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.title}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div
           className="blog-grid"
           style={{ position: 'relative', height: '482.734px' }}

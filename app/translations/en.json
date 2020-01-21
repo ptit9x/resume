@@ -27,5 +27,20 @@
   "boilerplate.containers.NotFoundPage.content": "Ooops! This page doesn't even exist",
   "boilerplate.containers.NotFoundPage.gohome": "Go To The Homepage?",
   "boilerplate.components.HomePage.Portfolio.title": "Portfolio",
-  "boilerplate.components.HomePage.Portfolio.all": "all"
+  "boilerplate.components.HomePage.Portfolio.all": "all",
+  "boilerplate.components.HomePage.Education.title": "Education",
+  "boilerplate.components.HomePage.Education.masterSchool": "Master of Post & Telecommunications Institute of Technology",
+  "boilerplate.components.HomePage.Education.masterMajor": "Computer Science",
+  "boilerplate.components.HomePage.Education.universitySchool": "Student of Post & Telecommunications Institute of Technology",
+  "boilerplate.components.HomePage.Education.universityMajor": "Software Technology",
+  "boilerplate.components.HomePage.Education.workExperience": "Work Experience",
+  "boilerplate.components.HomePage.Education.hybridDescription": "",
+  "boilerplate.components.HomePage.Education.sendoDescription": "My responsibilities is Perform a technical analysis of requirements, Developing API with KOA JS provide to mobile team using REST web services. Developing backend for electronic wallet use AdonisJS and KendoUI. Provide API checkout for Sendo.vn. Build some tools with ReactJS (NextJS + Express) for the project. Break and estimate time on JIRA and assign it to member in team. Review and merge code. Responsible for deploying systems to production.",
+  "boilerplate.components.HomePage.Education.fptDescription": "",
+  "boilerplate.components.HomePage.Education.eyePlusDescription": "",
+  "boilerplate.components.HomePage.Education.cyaDescription": "",
+  "boilerplate.components.HomePage.Interests.myInterest": "My Interests",
+  "boilerplate.components.HomePage.Interests.description": "I have a keen interest in photography. I was vice-president of the photography club during my time at university, and during this period I organised a number of very successful exhibitions and events events both on and off campus. <br />I also play the piano to grade 8 standard.",
+  "boilerplate.components.HomePage.Calendar.title": "Availability Calendar",
+  "boilerplate.components.HomePage.Blog.title": "From the Blog"
 }

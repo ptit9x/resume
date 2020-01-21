@@ -1,10 +1,17 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import messages from './messages';
 
 function Experience() {
   return (
     <section id="experience" className="section section-experience">
       <div className="animate-up">
-        <h2 className="section-title">Work Experience</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.workExperience}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div className="timeline">
           <div
             className="timeline-bar"
@@ -18,14 +25,13 @@ function Experience() {
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
-                <div className="date">2014 - 2016</div>
-                <h3>PINEAPPLE</h3>
+                <div className="date">2019 - Now</div>
+                <h3>Hybrid Technologies</h3>
                 <h4>Full Stack developer</h4>
                 <p>
-                  Worked as part of a multi-disciplinary team, carrying out
-                  ad-hoc tasks as requested by the IT Manager. Had a specific
-                  brief to ensure the websites build for customer’s precisely
-                  matched their requirements.developers and marketers.
+                  <FormattedMessage {...messages.hybridDescription}>
+                    {txt => txt}
+                  </FormattedMessage>{' '}
                 </p>
               </div>
             </div>
@@ -36,13 +42,13 @@ function Experience() {
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
                 <span className="arrow" />
-                <div className="date">2011 - 2014</div>
-                <h3>MACROSOOFT</h3>
-                <h4>Web Developer</h4>
+                <div className="date">2018 - 2019</div>
+                <h3>Sendo (sendo.vn)</h3>
+                <h4>Senior Developer & Leader</h4>
                 <p>
-                  I was responsible for working on a range of projects,
-                  designing appealing websites and interacting on a daily basis
-                  with graphic designers, back-end developers and marketers.
+                  <FormattedMessage {...messages.sendoDescription}>
+                    {txt => txt}
+                  </FormattedMessage>{' '}
                 </p>
               </div>
             </div>
@@ -53,14 +59,13 @@ function Experience() {
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
-                <div className="date">2003 - 2006</div>
-                <h3>JOOJLE</h3>
-                <h4>Systems Analyst / Web Developer</h4>
+                <div className="date">2016 - 2018</div>
+                <h3>FPT Software</h3>
+                <h4>Web Developer</h4>
                 <p>
-                  Rebuilt and enhanced existing ASP B2C site with ASP.NET 2.0
-                  Framework and tools. Technology consists of ASP.NET 2.0 (C#),
-                  IIS, Microsoft SQL Server 2005, Stored Procedures &amp; PayPal
-                  Instant Payment Notification.
+                  <FormattedMessage {...messages.fptDescription}>
+                    {txt => txt}
+                  </FormattedMessage>{' '}
                 </p>
               </div>
             </div>
@@ -71,13 +76,13 @@ function Experience() {
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
                 <span className="arrow" />
-                <div className="date">2004 - 2008</div>
-                <h3>IBBBM</h3>
-                <h4>Webmaster / Web Developer</h4>
+                <div className="date">2016</div>
+                <h3>EyePlus</h3>
+                <h4>Web Developer</h4>
                 <p>
-                  Developed, managed, operated and promoted an Internet
-                  business.Handled customer support issues.Planned and managed
-                  business finances.
+                  <FormattedMessage {...messages.eyePlusDescription}>
+                    {txt => txt}
+                  </FormattedMessage>{' '}
                 </p>
               </div>
             </div>
@@ -88,32 +93,13 @@ function Experience() {
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
-                <div className="date">2003 - 2004</div>
-                <h3>HEADBOOK</h3>
-                <h4>Intern</h4>
+                <div className="date">2014 - 2016=</div>
+                <h3>CYA Soft</h3>
+                <h4>Web Developer</h4>
                 <p>
-                  This was beginning of my career. Developed, managed, operated
-                  and promoted an Internet business.Handled customer support
-                  issues.
-                </p>
-              </div>
-            </div>
-            <div
-              className="timeline-box timeline-box-right"
-              style={{ position: 'absolute', right: '0px', top: '666px' }}
-            >
-              <span className="dot" />
-              <div className="timeline-box-inner animate-left">
-                <span className="arrow" />
-                <div className="date">2000 - 2003</div>
-                <h3>UBEAR</h3>
-                <h4>Taxi Driver</h4>
-                <p>
-                  Driving from point A to point B and if necessary to point C
-                  and sometimes even to point R and point S. I was known as
-                  experienced driver. Once my passenger who was a web developer
-                  told me about his job and I have made my decision at that
-                  moment to became a developer.
+                  <FormattedMessage {...messages.cyaDescription}>
+                    {txt => txt}
+                  </FormattedMessage>{' '}
                 </p>
               </div>
             </div>

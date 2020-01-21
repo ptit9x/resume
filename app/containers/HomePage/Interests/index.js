@@ -1,22 +1,27 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import messages from './messages';
 
 function Interests() {
   return (
     <section id="interests" className="section section-interests">
       <div className="animate-up">
-        <h2 className="section-title">My Interests</h2>
+        <h2 className="section-title">
+          <FormattedMessage {...messages.myInterest}>
+            {txt => txt}
+          </FormattedMessage>{' '}
+        </h2>
         <div className="section-box">
           <p>
-            I have a keen interest in photography. I was vice-president of the
-            photography club during my time at university, and during this
-            period I organised a number of very successful exhibitions and
-            events events both on and off campus.
-            <br />I also play the piano to grade 8 standard.
+          <FormattedMessage {...messages.description}>
+            {txt => txt}
+          </FormattedMessage>{' '}
           </p>
           <ul className="interests-list">
             <li>
               <i className="map-icon map-icon-bicycling" />
-              <span style={{ left: '7px' }}>Bicycling</span>
+              <span style={{ left: '7px' }}>Guitar</span>
             </li>
             <li>
               <i className="map-icon map-icon-movie-theater" />
@@ -24,7 +29,7 @@ function Interests() {
             </li>
             <li>
               <i className="map-icon map-icon-ice-skating" />
-              <span style={{ left: '10.5px' }}>Skating</span>
+              <span style={{ left: '10.5px' }}>Shopping</span>
             </li>
             <li>
               <i className="map-icon map-icon-shopping-mall" />

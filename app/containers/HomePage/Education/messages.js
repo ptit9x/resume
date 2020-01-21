@@ -11,5 +11,21 @@ export default defineMessages({
   title: {
     id: `${scope}.education`,
     defaultMessage: 'Education',
+  },
+  masterSchool: {
+    id: `${scope}.masterSchool`,
+    defaultMessage: 'Master of Post & Telecommunications Institute of Technology',
+  },
+  masterMajor: {
+    id: `${scope}.masterMajor`,
+    defaultMessage: 'Computer Science',
+  },
+  universitySchool: {
+    id: `${scope}.universitySchool`,
+    defaultMessage: 'Student of Post & Telecommunications Institute of Technology',
+  },
+  universityMajor: {
+    id: `${scope}.universityMajor`,
+    defaultMessage: 'Software Technology',
   }
 });

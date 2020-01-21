@@ -27,5 +27,20 @@
   "boilerplate.containers.NotFoundPage.content": "Ooops! Trang này không tồn tại",
   "boilerplate.containers.NotFoundPage.gohome": "Trở về trang chủ?",
   "boilerplate.components.HomePage.Portfolio.title": "Portfolio",
-  "boilerplate.components.HomePage.Portfolio.all": "Tất cả"
+  "boilerplate.components.HomePage.Portfolio.all": "Tất cả",
+  "boilerplate.components.HomePage.Education.title": "Trình độ học vấn",
+  "boilerplate.components.HomePage.Education.masterSchool": "Thạc sĩ tại Học Viện Công Nghệ Bưu Chính Viễn Thông",
+  "boilerplate.components.HomePage.Education.masterMajor": "Chuyên ngành Khoa Học Máy Tính",
+  "boilerplate.components.HomePage.Education.universitySchool": "Sinh viên tại Học Viện Công Nghệ Bưu Chính Viễn Thông",
+  "boilerplate.components.HomePage.Education.universityMajor": "Chuyên ngành Công Nghệ Phần Mềm",
+  "boilerplate.components.HomePage.Education.workExperience": "Kinh nghiệm làm việc",
+  "boilerplate.components.HomePage.Education.hybridDescription": "",
+  "boilerplate.components.HomePage.Education.sendoDescription": "Trách nhiệm của tôi là Thực hiện phân tích kỹ thuật các yêu cầu, Phát triển API với KOA JS cung cấp cho nhóm di động sử dụng các dịch vụ web REST. Phát triển phụ trợ cho ví điện tử sử dụng AdonisJS và KendoUI. Cung cấp kiểm tra API cho Sendo.vn. Xây dựng một số công cụ với ReactJS (NextJS + Express) cho dự án. Phá vỡ và ước tính thời gian trên JIRA và chỉ định nó cho thành viên trong nhóm. Review và merge code. Chịu trách nhiệm triển khai casc API leen Production.",
+  "boilerplate.components.HomePage.Education.fptDescription": "",
+  "boilerplate.components.HomePage.Education.eyePlusDescription": "",
+  "boilerplate.components.HomePage.Education.cyaDescription": "",
+  "boilerplate.components.HomePage.Interests.myInterest": "Sở thích cá nhân",
+  "boilerplate.components.HomePage.Interests.description": "ttttttttttttttt",
+  "boilerplate.components.HomePage.Calendar.title": "Lịch",
+  "boilerplate.components.HomePage.Blog.title": "Từ Blog"
 }

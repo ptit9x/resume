@@ -9,7 +9,7 @@ export const scope = 'boilerplate.components.HomePage.Blog';
 
 export default defineMessages({
   title: {
-    id: `${scope}.blog`,
+    id: `${scope}.title`,
     defaultMessage: 'Blog',
   }
 });
