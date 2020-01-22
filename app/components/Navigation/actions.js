@@ -17,5 +17,5 @@ export function changeMobileNavOpen(mobileNavOpen) {
   return {
     type: MOBILE_NAVIGATION_OPEN,
     mobileNavOpen,
-  }
+  };
 }

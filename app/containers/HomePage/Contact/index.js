@@ -1,17 +1,29 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import messages from './messages';
 
 function Contact() {
+  const profile = {
+    age: new Date().getFullYear() - 1991,
+    address: 'FLC My Dinh, 36 Pham Hung, My Dinh 2, Ha Noi',
+    email: 'ngochuynh1991@gmail.com',
+    phone: '+84374539633',
+    textPhone: '+84 37 453 9633',
+  };
   return (
     <section id="contact" className="section section-contact">
       <div className="animate-up">
-        <h2 className="section-title">Contact Me</h2>
+        <h2 className="section-title">
+        <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
+        </h2>
         <div className="row">
           <div className="col-sm-6">
             <div
               className="section-box contact-form"
               style={{ minHeight: '488px' }}
             >
-              <h3>Feel free to contact me</h3>
+              <h3><FormattedMessage {...messages.description}>{txt => txt}</FormattedMessage>{' '}</h3>
               <form
                 className="contactForm"
                 action="php/contact_form.php"
@@ -20,12 +32,12 @@ function Contact() {
                 <div className="input-field">
                   <input className="contact-name" type="text" name="name" />
                   <span className="line" />
-                  <label>Name</label>
+                  <label><FormattedMessage {...messages.labelName}>{txt => txt}</FormattedMessage>{' '}</label>
                 </div>
                 <div className="input-field">
                   <input className="contact-email" type="email" name="email" />
                   <span className="line" />
-                  <label>Email</label>
+                  <label><FormattedMessage {...messages.labelAddress}>{txt => txt}</FormattedMessage>{' '}</label>
                 </div>
                 <div className="input-field">
                   <input
@@ -34,7 +46,7 @@ function Contact() {
                     name="subject"
                   />
                   <span className="line" />
-                  <label>Subject</label>
+                  <label><FormattedMessage {...messages.subject}>{txt => txt}</FormattedMessage>{' '}</label>
                 </div>
                 <div className="input-field">
                   <textarea
@@ -44,7 +56,7 @@ function Contact() {
                     defaultValue=""
                   />
                   <span className="line" />
-                  <label>Message</label>
+                  <label><FormattedMessage {...messages.message}>{txt => txt}</FormattedMessage>{' '}</label>
                 </div>
                 <span className="btn-outer btn-primary-outer ripple">
                   <input
@@ -65,21 +77,19 @@ function Contact() {
             >
               <ul className="contact-list">
                 <li className="clearfix">
-                  <strong>Address</strong>
-                  <span>Belgium, Brussels, Liutte 27, BE</span>
+                  <strong><FormattedMessage {...messages.labelAddress}>{txt => txt}</FormattedMessage>{' '}</strong>
+                  <span>{profile.address}</span>
                 </li>
                 <li className="clearfix">
-                  <strong>phone</strong>
+                  <strong><FormattedMessage {...messages.labelPhone}>{txt => txt}</FormattedMessage>{' '}</strong>
                   <span>
-                    <a href="tel:+12562548456">+1 256 254 84 56</a>
+                    <a href={'tel:' + profile.phone}>{profile.textPhone}</a>
                   </span>
                 </li>
                 <li className="clearfix">
-                  <strong>E-mail</strong>
+                  <strong><FormattedMessage {...messages.labelEmail}>{txt => txt}</FormattedMessage>{' '}</strong>
                   <span>
-                    <a href="mailto:robertsmith@company.com">
-                      robertsmith@company.com
-                    </a>
+                    <a href={'mailto:' + profile.email}>{profile.email}</a>
                   </span>
                 </li>
               </ul>

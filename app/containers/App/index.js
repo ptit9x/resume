@@ -24,11 +24,13 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { makeSelectMobileNavOpen } from '../../components/Navigation/selectors';
 
-export function App({
-  mobileNavMenu,
-}) {
+export function App({ mobileNavMenu }) {
   return (
-    <div className={`home header-has-img ${mobileNavMenu ? 'mobile-nav-opened' : ''}`}>
+    <div
+      className={`home header-has-img ${
+        mobileNavMenu ? 'mobile-nav-opened' : ''
+      }`}
+    >
       <Helmet
         titleTemplate="%s - My Résumé"
         defaultTitle="React.js This is all about me"
@@ -63,9 +65,7 @@ const mapStateToProps = createStructuredSelector({
   mobileNavMenu: makeSelectMobileNavOpen(),
 });
 
-const withConnect = connect(
-  mapStateToProps,
-);
+const withConnect = connect(mapStateToProps);
 
 export default compose(
   withConnect,

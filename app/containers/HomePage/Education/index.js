@@ -8,16 +8,14 @@ function Education() {
     <section id="education" className="section section-education">
       <div className="animate-up">
         <h2 className="section-title">
-          <FormattedMessage {...messages.title}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
         <div className="timeline">
           <div
             className="timeline-bar"
-            style={{ top: '80px', height: '418px' }}
+            style={{ top: '80px', height: '250px' }}
           />
-          <div className="timeline-inner clearfix" style={{ height: '590px' }}>
+          <div className="timeline-inner clearfix" style={{ height: '270px' }}>
             <div
               className="timeline-box timeline-box-compact timeline-box-left"
               style={{ position: 'absolute', left: '0px', top: '0px' }}

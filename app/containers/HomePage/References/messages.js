@@ -9,7 +9,7 @@ export const scope = 'boilerplate.components.HomePage.References';
 
 export default defineMessages({
   title: {
-    id: `${scope}.references`,
+    id: `${scope}.title`,
     defaultMessage: 'References',
-  }
+  },
 });

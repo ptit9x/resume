@@ -8,44 +8,40 @@ function Interests() {
     <section id="interests" className="section section-interests">
       <div className="animate-up">
         <h2 className="section-title">
-          <FormattedMessage {...messages.myInterest}>
+          <FormattedMessage {...messages.title}>
             {txt => txt}
           </FormattedMessage>{' '}
         </h2>
         <div className="section-box">
           <p>
-          <FormattedMessage {...messages.description}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+            <FormattedMessage {...messages.description}>
+              {txt => txt}
+            </FormattedMessage>{' '}
           </p>
           <ul className="interests-list">
             <li>
-              <i className="map-icon map-icon-bicycling" />
-              <span style={{ left: '7px' }}>Guitar</span>
+              <i className="map-icon map-icon-walking" />
+              <FormattedMessage {...messages.walking} />
             </li>
             <li>
               <i className="map-icon map-icon-movie-theater" />
-              <span style={{ left: '-6.5px' }}>Watch Movies</span>
+              <FormattedMessage {...messages.movie} />
             </li>
             <li>
-              <i className="map-icon map-icon-ice-skating" />
-              <span style={{ left: '10.5px' }}>Shopping</span>
+              <i className="map-icon map-icon-book-store" />
+              <FormattedMessage {...messages.reading} />
             </li>
             <li>
-              <i className="map-icon map-icon-shopping-mall" />
-              <span style={{ left: '5px' }}>Shopping</span>
+              <i className="map-icon map-icon-cafe" />
+              <FormattedMessage {...messages.cafe} />
             </li>
             <li>
-              <i className="map-icon map-icon-tennis" />
-              <span style={{ left: '-7.5px' }}>Playing Tennis</span>
+              <i className="map-icon map-icon-travel-agency" />
+              <FormattedMessage {...messages.travel} />
             </li>
             <li>
-              <i className="map-icon map-icon-bowling-alley" />
-              <span style={{ left: '-11px' }}>Playing Bowling</span>
-            </li>
-            <li>
-              <i className="map-icon map-icon-swimming" />
-              <span style={{ left: '2.5px' }}>Swimming</span>
+              <i className="map-icon map-icon-audio-description" />
+              <FormattedMessage {...messages.music} />
             </li>
           </ul>
         </div>

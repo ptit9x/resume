@@ -2,15 +2,12 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 import Nagivation from '../Navigation';
 import { changeMobileNavOpen } from '../Navigation/actions';
-import { createStructuredSelector } from 'reselect';
 import { makeSelectMobileNavOpen } from '../Navigation/selectors';
 
-function MobileNav({
-  mobileNavOpen,
-  onChangeMobileNavOpen,
-}) {
+function MobileNav({ mobileNavOpen, onChangeMobileNavOpen }) {
   return (
     <div className="mobile-nav">
       <button
@@ -36,7 +33,7 @@ function MobileNav({
 MobileNav.propTypes = {
   mobileNavOpen: PropTypes.bool,
   onChangeMobileNavOpen: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = createStructuredSelector({
   mobileNavOpen: makeSelectMobileNavOpen(),

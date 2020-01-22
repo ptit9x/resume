@@ -181,17 +181,15 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeFixedMenu: v => {
+    onChangeFixedMenu: v =>
       // hide menu mobile when click to menu mobile
-      return dispatch(changeMobileNavOpen(false));
-    },
+      dispatch(changeMobileNavOpen(false)),
     onChangeFixedMenuScrollTop: () => {
       window.addEventListener('scroll', () => {
         if (window.scrollY === 0) {
           return dispatch(changeFixedMenu(false));
-        } else {
-          return dispatch(changeFixedMenu(true));
         }
+        return dispatch(changeFixedMenu(true));
       });
     },
   };

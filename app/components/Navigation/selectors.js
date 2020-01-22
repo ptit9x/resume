@@ -17,13 +17,10 @@ const makeSelectFixedMenu = () =>
     navigationState => navigationState.fixedMenu,
   );
 
-const makeSelectMobileNavOpen = () => 
-    createSelector(
-      selectNavigation,
-      navigationState => navigationState.mobileNavOpen,
-    );
+const makeSelectMobileNavOpen = () =>
+  createSelector(
+    selectNavigation,
+    navigationState => navigationState.mobileNavOpen,
+  );
 
-export {
-  makeSelectFixedMenu,
-  makeSelectMobileNavOpen
-};
+export { makeSelectFixedMenu, makeSelectMobileNavOpen };

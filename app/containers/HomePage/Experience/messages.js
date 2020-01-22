@@ -35,5 +35,5 @@ export default defineMessages({
   cyaDescription: {
     id: `${scope}.cyaDescription`,
     defaultMessage: '',
-  }
+  },
 });

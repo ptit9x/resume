@@ -17,13 +17,10 @@ export default function NotFound() {
         4<span>0</span>4
       </h2>
       <p>
-        <FormattedMessage {...messages.content}>
-          {txt => txt}
-        </FormattedMessage>{' '}</p>
+        <FormattedMessage {...messages.content}>{txt => txt}</FormattedMessage>{' '}
+      </p>
       <Link className="btn btn-lg btn-border" to="/">
-        <FormattedMessage {...messages.gohome}>
-          {txt => txt}
-        </FormattedMessage>{' '}
+        <FormattedMessage {...messages.gohome}>{txt => txt}</FormattedMessage>{' '}
       </Link>
     </div>
   );

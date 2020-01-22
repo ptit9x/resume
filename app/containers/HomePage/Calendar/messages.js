@@ -11,5 +11,5 @@ export default defineMessages({
   title: {
     id: `${scope}.availableCalendar`,
     defaultMessage: 'Availability Calendar',
-  }
+  },
 });

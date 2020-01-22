@@ -10,7 +10,7 @@ export const scope = 'boilerplate.containers.NotFoundPage';
 export default defineMessages({
   content: {
     id: `${scope}.content`,
-    defaultMessage: 'Ooops! This page doesn\'t even exist',
+    defaultMessage: "Ooops! This page doesn't even exist",
   },
   gohome: {
     id: `${scope}.gohome`,

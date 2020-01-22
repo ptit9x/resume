@@ -31,14 +31,17 @@ function Socials() {
         </a>
       </li>
       <li>
-        <a className="ripple-centered" to="https://huynhdn.com" target="_blank">
+        <a className="ripple-centered"
+          href="https://huynhdn.com"
+          target="_blank"
+        >
           <i className="rsicon rsicon-dribbble" />
         </a>
       </li>
       <li>
         <a
           className="ripple-centered"
-          to="https://github.com/ptit9x"
+          href="https://github.com/ptit9x"
           target="_blank"
         >
           <i className="rsicon rsicon-github" />

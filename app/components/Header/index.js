@@ -9,7 +9,10 @@ import Navigation from '../Navigation';
 import './header.css';
 import { makeSelectLocale } from '../../containers/LanguageProvider/selectors';
 import { changeLocale } from '../../containers/LanguageProvider/actions';
-import { makeSelectFixedMenu, makeSelectMobileNavOpen } from '../Navigation/selectors';
+import {
+  makeSelectFixedMenu,
+  makeSelectMobileNavOpen,
+} from '../Navigation/selectors';
 import { changeMobileNavOpen } from '../Navigation/actions';
 
 export function Header({

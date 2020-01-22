@@ -15,7 +15,7 @@ function Experience() {
         <div className="timeline">
           <div
             className="timeline-bar"
-            style={{ top: '80px', height: '666px' }}
+            style={{ top: '80px', height: '860px' }}
           />
           <div className="timeline-inner clearfix" style={{ height: '999px' }}>
             <div
@@ -54,7 +54,7 @@ function Experience() {
             </div>
             <div
               className="timeline-box timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '334px' }}
+              style={{ position: 'absolute', left: '0px', top: '375px' }}
             >
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
@@ -71,7 +71,7 @@ function Experience() {
             </div>
             <div
               className="timeline-box timeline-box-right"
-              style={{ position: 'absolute', right: '0px', top: '380px' }}
+              style={{ position: 'absolute', right: '0px', top: '600px' }}
             >
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
@@ -88,12 +88,12 @@ function Experience() {
             </div>
             <div
               className="timeline-box timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '668px' }}
+              style={{ position: 'absolute', left: '0px', top: '730px' }}
             >
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
-                <div className="date">2014 - 2016=</div>
+                <div className="date">2014 - 2016</div>
                 <h3>CYA Soft</h3>
                 <h4>Web Developer</h4>
                 <p>

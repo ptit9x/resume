@@ -35,5 +35,5 @@ export default defineMessages({
   teamwork: {
     id: `${scope}.teamwork`,
     defaultMessage: 'Teamwork',
-  }
+  },
 });

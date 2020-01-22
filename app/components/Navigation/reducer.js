@@ -6,10 +6,7 @@
 
 import produce from 'immer';
 
-import {
-  FIXED_NAVIGATION,
-  MOBILE_NAVIGATION_OPEN,
-} from './constants';
+import { FIXED_NAVIGATION, MOBILE_NAVIGATION_OPEN } from './constants';
 
 export const initialState = {
   fixedMenu: false,

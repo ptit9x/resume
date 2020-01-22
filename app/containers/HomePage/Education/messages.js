@@ -9,12 +9,13 @@ export const scope = 'boilerplate.components.HomePage.Education';
 
 export default defineMessages({
   title: {
-    id: `${scope}.education`,
+    id: `${scope}.title`,
     defaultMessage: 'Education',
   },
   masterSchool: {
     id: `${scope}.masterSchool`,
-    defaultMessage: 'Master of Post & Telecommunications Institute of Technology',
+    defaultMessage:
+      'Master of Post & Telecommunications Institute of Technology',
   },
   masterMajor: {
     id: `${scope}.masterMajor`,
@@ -22,10 +23,11 @@ export default defineMessages({
   },
   universitySchool: {
     id: `${scope}.universitySchool`,
-    defaultMessage: 'Student of Post & Telecommunications Institute of Technology',
+    defaultMessage:
+      'Student of Post & Telecommunications Institute of Technology',
   },
   universityMajor: {
     id: `${scope}.universityMajor`,
     defaultMessage: 'Software Technology',
-  }
+  },
 });

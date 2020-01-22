@@ -1,13 +1,14 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import messages from './messages';
 
 function Calendar() {
   return (
     <section id="calendar" className="section section-calendar">
       <div className="animate-up">
         <h2 className="section-title">
-          <FormattedMessage {...messages.title}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
         <div className="calendar-busy" data-weekstart="monday">
           <div
