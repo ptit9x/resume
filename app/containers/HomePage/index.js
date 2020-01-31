@@ -13,7 +13,7 @@ import Education from './Education';
 import References from './References';
 import Blog from './Blog';
 import Interests from './Interests';
-import Calendar from './Calendar';
+import CalendarSection from './CalendarSection';
 import Contact from './Contact';
 
 export default function HomePage() {
@@ -31,7 +31,7 @@ export default function HomePage() {
       <References />
       <Blog />
       <Interests />
-      <Calendar />
+      <CalendarSection />
       <Contact />
     </div>
   );

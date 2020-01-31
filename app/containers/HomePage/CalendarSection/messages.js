@@ -9,7 +9,7 @@ export const scope = 'boilerplate.components.HomePage.Calendar';
 
 export default defineMessages({
   title: {
-    id: `${scope}.availableCalendar`,
+    id: `${scope}.title`,
     defaultMessage: 'Availability Calendar',
   },
 });

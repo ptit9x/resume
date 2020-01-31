@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import Calendar from 'react-calendar';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { FormattedMessage } from 'react-intl';
+
+import { makeSelectLocale } from '../../LanguageProvider/selectors';
 
 import messages from './messages';
 
-function Calendar() {
+function CalendarSection({ locale }) {
+  const [date, setDate] = useState(new Date());
+
+  const onChange = (date) => {
+    console.log(date, "dateeeeee");
+    setDate(date);
+  };
   return (
     <section id="calendar" className="section section-calendar">
       <div className="animate-up">
@@ -29,6 +41,12 @@ function Calendar() {
               </div>
             </div>
           </div>
+          <Calendar
+            onChange={onChange}
+            value={date}
+            className="calendar-cont"
+            locale={locale}
+          />
           <div className="calendar-cont">
             <div className="calendar-header">
               <div className="calendar-nav">
@@ -207,4 +225,16 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+CalendarSection.propTypes = {
+  locale: PropTypes.string,
+};
+
+const mapStateToProps = createSelector(
+  makeSelectLocale(),
+  locale => ({ locale }),
+);
+
+
+export default connect(
+  mapStateToProps,
+)(CalendarSection);
