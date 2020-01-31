@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './messages';
+import './style.css';
 
 function Experience() {
   return (
@@ -13,15 +14,9 @@ function Experience() {
           </FormattedMessage>{' '}
         </h2>
         <div className="timeline">
-          <div
-            className="timeline-bar"
-            style={{ top: '80px', height: '860px' }}
-          />
-          <div className="timeline-inner clearfix" style={{ height: '999px' }}>
-            <div
-              className="timeline-box timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '0px' }}
-            >
+          <div className="timeline-bar" />
+          <div className="timeline-inner clearfix">
+            <div className="timeline-box timeline-box-left timeline-box5">
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
@@ -35,10 +30,7 @@ function Experience() {
                 </p>
               </div>
             </div>
-            <div
-              className="timeline-box timeline-box-right"
-              style={{ position: 'absolute', right: '0px', top: '70px' }}
-            >
+            <div className="timeline-box timeline-box-right timeline-box4">
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
                 <span className="arrow" />
@@ -52,10 +44,7 @@ function Experience() {
                 </p>
               </div>
             </div>
-            <div
-              className="timeline-box timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '375px' }}
-            >
+            <div className="timeline-box timeline-box-left timeline-box3">
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
@@ -69,10 +58,7 @@ function Experience() {
                 </p>
               </div>
             </div>
-            <div
-              className="timeline-box timeline-box-right"
-              style={{ position: 'absolute', right: '0px', top: '600px' }}
-            >
+            <div className="timeline-box timeline-box-right timeline-box2">
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
                 <span className="arrow" />
@@ -86,10 +72,7 @@ function Experience() {
                 </p>
               </div>
             </div>
-            <div
-              className="timeline-box timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '730px' }}
-            >
+            <div className="timeline-box timeline-box-left timeline-box1">
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />

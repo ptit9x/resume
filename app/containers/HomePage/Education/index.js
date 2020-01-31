@@ -2,6 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import messages from './messages';
+import './style.css';
 
 function Education() {
   return (
@@ -11,15 +12,9 @@ function Education() {
           <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
         <div className="timeline">
-          <div
-            className="timeline-bar"
-            style={{ top: '80px', height: '250px' }}
-          />
-          <div className="timeline-inner clearfix" style={{ height: '270px' }}>
-            <div
-              className="timeline-box timeline-box-compact timeline-box-left"
-              style={{ position: 'absolute', left: '0px', top: '0px' }}
-            >
+          <div className="timeline-bar" />
+          <div className="timeline-inner clearfix">
+            <div className="timeline-box timeline-box-compact timeline-box-left timeline-box2">
               <span className="dot" />
               <div className="timeline-box-inner animate-right">
                 <span className="arrow" />
@@ -38,10 +33,7 @@ function Education() {
                 </h4>
               </div>
             </div>
-            <div
-              className="timeline-box timeline-box-compact timeline-box-right"
-              style={{ position: 'absolute', right: '0px', top: '70px' }}
-            >
+            <div className="timeline-box timeline-box-compact timeline-box-right timeline-box1">
               <span className="dot" />
               <div className="timeline-box-inner animate-left">
                 <span className="arrow" />

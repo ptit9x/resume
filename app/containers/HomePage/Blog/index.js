@@ -1,6 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
 
 import thumb1 from '../../../assets/images/uploads/thumb-449x286-1.jpg';
 import thumb2 from '../../../assets/images/uploads/thumb-449x286-5.jpg';
@@ -13,90 +12,62 @@ function Blog() {
         <h2 className="section-title">
           <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
-        <div
-          className="blog-grid"
-          style={{ position: 'relative', height: '482.734px' }}
-        >
+        <div className="blog-grid">
           <div className="grid-sizer" />
-          <div
-            className="grid-item"
-            style={{ position: 'absolute', left: '0%', top: '0px' }}
-          >
+          <div className="grid-item">
             <article className="post-box">
               <div className="post-media">
                 <div className="post-image">
-                  <Link to="single.html">
+                  <a href="https://huynhdn.com/lap-trinh/react/cac-thu-vien-ui-dang-dung-cho-reactjs">
                     <img src={thumb1} alt="" />
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="post-data">
-                <time
-                  className="post-datetime"
-                  dateTime="2015-03-13T07:44:01+00:00"
-                >
-                  <span className="day">03</span>
-                  <span className="month">MAY</span>
+                <time className="post-datetime">
+                  <span className="day">19</span>
+                  <span className="month">DEC</span>
                 </time>
                 <div className="post-tag">
-                  <Link to="/">#Photo</Link>
-                  <Link to="/">#Architect</Link>
+                  <a href="https://huynhdn.com/danh-muc/lap-trinh/nodejs/">#NodeJS</a>
+                  <a href="https://huynhdn.com/danh-muc/lap-trinh/react/">#React</a>
                 </div>
                 <h3 className="post-title">
-                  <Link to="single-image.html">Image Post</Link>
+                  <a href="https://huynhdn.com/lap-trinh/react/cac-thu-vien-ui-dang-dung-cho-reactjs">Các thư viện UI đáng dùng cho ReactJS</a>
                 </h3>
                 <div className="post-info">
-                  <Link to="/">
-                    <i className="rsicon rsicon-user" />
-                    by admin
-                  </Link>
-                  <Link to="/">
-                    <i className="rsicon rsicon-comments" />
-                    56
-                  </Link>
+                  <a href="https://huynhdn.com/author/huynhdn/">
+                    <i className="rsicon rsicon-user" /> by HuynhDN
+                  </a>
                 </div>
               </div>
             </article>
           </div>
-          <div
-            className="grid-item"
-            style={{ position: 'absolute', left: '50%', top: '0px' }}
-          >
+          <div className="grid-item">
             <article className="post-box">
               <div className="post-media">
                 <div className="post-image">
-                  <Link to="single-vimeo.html">
+                  <a href="https://huynhdn.com/he-thong/google-cloud/dang-ki-google-cloud-nhan-ngay-300-do-la">
                     <img src={thumb2} alt="" />
-                    <span className="post-type-icon">
-                      <i className="rsicon rsicon-play" />
-                    </span>
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="post-data">
-                <time
-                  className="post-datetime"
-                  dateTime="2015-03-13T07:44:01+00:00"
-                >
-                  <span className="day">03</span>
-                  <span className="month">MAY</span>
+                <time className="post-datetime">
+                  <span className="day">29</span>
+                  <span className="month">MARCH</span>
                 </time>
                 <div className="post-tag">
-                  <Link to="/">#Photo</Link>
-                  <Link to="/">#Architect</Link>
+                  <a href="https://huynhdn.com/danh-muc/he-thong/">#System</a>
+                  <a href="https://huynhdn.com/danh-muc/he-thong/google-cloud/">#Google Cloud</a>
                 </div>
                 <h3 className="post-title">
-                  <Link to="single-vimeo.html">Vimeo Video Post</Link>
+                  <a href="https://huynhdn.com/he-thong/google-cloud/dang-ki-google-cloud-nhan-ngay-300-do-la">ĐĂNG KÝ TÀI KHOẢN GOOGLE CLOUD NHẬN $300 DÙNG 12 THÁNG.</a>
                 </h3>
                 <div className="post-info">
-                  <Link to="/">
-                    <i className="rsicon rsicon-user" />
-                    by admin
-                  </Link>
-                  <Link to="/">
-                    <i className="rsicon rsicon-comments" />
-                    56
-                  </Link>
+                  <a href="https://huynhdn.com/author/huynhdn/">
+                    <i className="rsicon rsicon-user" /> by HuynhDN
+                  </a>
                 </div>
               </div>
             </article>
