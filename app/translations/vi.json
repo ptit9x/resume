@@ -49,6 +49,7 @@
   "boilerplate.components.HomePage.Interests.music": "Nghe nhạc",
   "boilerplate.components.HomePage.References.title": "Người giới thiệu",
   "boilerplate.components.HomePage.Calendar.title": "Lịch",
+  "boilerplate.components.HomePage.Calendar.busyNote": "Tôi bận vào những ngày này",
   "boilerplate.components.HomePage.Blog.title": "Từ Blog của Tôi",
   "boilerplate.components.HomePage.Contact.title": "Liên hệ",
   "boilerplate.components.HomePage.Contact.labelName": "Tên",

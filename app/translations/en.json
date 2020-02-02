@@ -49,6 +49,7 @@
   "boilerplate.components.HomePage.Interests.music": "Listen to Music",
   "boilerplate.components.HomePage.References.title": "References",
   "boilerplate.components.HomePage.Calendar.title": "Availability Calendar",
+  "boilerplate.components.HomePage.Calendar.busyNote": "Sorry. I'm not available on those days",
   "boilerplate.components.HomePage.Blog.title": "From the Blog",
   "boilerplate.components.HomePage.Contact.title": "Contact",
   "boilerplate.components.HomePage.Contact.labelAddress": "Address",

@@ -1,0 +1,29 @@
+.react-calendar {
+	width: 100%;
+	border: none;
+}
+
+.react-calendar button {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: 16px;
+}
+.react-calendar__navigation button {
+	font-size: 18px;
+	color: #000;
+}
+
+abbr[title] {
+	color: #757575;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+	border-bottom: none;
+	text-decoration: none;
+}
+.react-calendar__tile--active:enabled:hover, 
+.react-calendar__tile--active:enabled:focus,
+.react-calendar__tile--active {
+	background: #07cb79;
+}
