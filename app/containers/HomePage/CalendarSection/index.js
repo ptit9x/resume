@@ -14,7 +14,7 @@ import './style.css';
 function CalendarSection({ locale }) {
   const [date, setDate] = useState(new Date());
   const onChange = (date) => setDate(date);
-  console.log(locale, '111111');
+
   return (
     <section id="calendar" className="section section-calendar">
       <div className="animate-up">
@@ -32,10 +32,14 @@ function CalendarSection({ locale }) {
               <div className="valign-middle">
                 <div className="valign-inner">
                   <div className="date">
-                    <span className="day">{moment(date).locale(locale).date()}</span>
-                    <span className="month">{moment(date).locale(locale).format('MMM')}</span>
+                    <span className="day">{date.getDate()}</span>
+                    <span className="month">
+                      <FormattedMessage {...messages[moment(date).format('MMM')]}>{txt => txt}</FormattedMessage>{' '}
+                    </span>
                   </div>
-                  <div className="week-day">{moment(date).locale(locale).format('dddd')}</div>
+                  <div className="week-day">
+                    <FormattedMessage {...messages[moment(date).format('dddd')]}>{txt => txt}</FormattedMessage>{' '}
+                  </div>
                 </div>
               </div>
             </div>

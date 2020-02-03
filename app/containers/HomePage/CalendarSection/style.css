@@ -1,6 +1,7 @@
 .react-calendar {
 	width: 100%;
 	border: none;
+	margin-bottom: 35px;
 }
 
 .react-calendar button {
