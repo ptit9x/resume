@@ -10,7 +10,7 @@ import { CHANGE_THEME_COLOR, TOGGLE_BACKGROUND_HEADER, LIGHT_THEME_SKIN } from '
 export const initialState = {
   activeColor: "07cb79",
   showBackground: true,
-  lightTheneSkin: true,
+  themeSkin: "light",
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -24,7 +24,7 @@ const operationPanelReducer = (state = initialState, action) =>
         draft.showBackground = action.showBackground;
         break;
       case LIGHT_THEME_SKIN:
-        draft.lightTheneSkin = action.lightTheneSkin;
+        draft.themeSkin = action.themeSkin;
         break;
     }
   });

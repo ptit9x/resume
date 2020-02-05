@@ -23,16 +23,17 @@ import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { makeSelectMobileNavOpen } from '../../components/Navigation/selectors';
-import { makeSelectActiveColor, makeSelectToggleBackground } from '../../components/OperationPanel/selectors';
+import { makeSelectActiveColor, makeSelectToggleBackground, makeSelectThemeSkin } from '../../components/OperationPanel/selectors';
 
 export function App({
   mobileNavMenu,
   activeColor,
   backgroundHeader,
+  themeSkin,
 }) {
   return (
     <div
-      className={`home ${ mobileNavMenu ? 'mobile-nav-opened' : '' } theme-color-${activeColor || ''} ${backgroundHeader ? 'header-has-img' : ''} theme-skin-light`}
+      className={`home ${ mobileNavMenu ? 'mobile-nav-opened' : '' } theme-color-${activeColor || ''} ${backgroundHeader ? 'header-has-img' : ''} theme-skin-${themeSkin}`}
     >
       <Helmet
         titleTemplate="%s - My Résumé"
@@ -64,12 +65,14 @@ App.propTypes = {
   mobileNavMenu: PropTypes.bool,
   activeColor: PropTypes.string,
   backgroundHeader: PropTypes.bool,
+  themeSkin: PropTypes.string,
 };
 
 const mapStateToProps = createStructuredSelector({
   mobileNavMenu: makeSelectMobileNavOpen(),
   activeColor: makeSelectActiveColor(),
   backgroundHeader: makeSelectToggleBackground(),
+  themeSkin: makeSelectThemeSkin(),
 });
 
 const withConnect = connect(mapStateToProps);

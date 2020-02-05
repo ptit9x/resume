@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { useInjectReducer } from '../../utils/injectReducer';
 import reducer from './reducer';
-import { changeThemeColor, toggleBackGround } from './actions';
+import { changeThemeColor, toggleBackGround, changeThemeSkin } from './actions';
 import { makeSelectActiveColor, makeSelectToggleBackground } from './selectors';
 
 const key = "operation";
@@ -16,8 +16,8 @@ function OperationPanel({
   onChangeThemeColor,
   showBackground,
   toggleSetBackground,
+  onChangeThemeSkin,
 }) {
-  console.log(showBackground, " showBackgroundshowBackground");
   useInjectReducer({ key, reducer });
   const colors = [
     'e83b35',
@@ -46,12 +46,8 @@ function OperationPanel({
     'a7d9a8',
   ];
   const [showSetting, setShowSetting] = useState(false);
-  const [lightThemeSkin, setLightThemeSkin] = useState(true);
   const toggleSetting = () => {
     setShowSetting(!showSetting);
-  };
-  const toggleSkin = () => {
-    setLightThemeSkin(!lightThemeSkin);
   };
   return (
     <div
@@ -69,14 +65,13 @@ function OperationPanel({
       <div className="op-content">
         <div className="op-section">
           <div className="op-theme-skin op-btn-group">
-            <button className="op-btn" data-value="light" onClick={toggleSkin}>
+            <button className="op-btn" onClick={() => onChangeThemeSkin("light")}>
               Light
             </button>
             <button
               type="button"
               className="op-btn"
-              data-value="dark"
-              onClick={toggleSkin}
+              onClick={() => onChangeThemeSkin("dark")}
             >
               Dark
             </button>
@@ -132,6 +127,7 @@ OperationPanel.propTypes = {
   onChangeThemeColor: PropTypes.func.isRequired,
   showBackground: PropTypes.bool,
   toggleSetBackground: PropTypes.func.isRequired,
+  onChangeThemeSkin: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -143,6 +139,7 @@ export function mapDispatchToProps(dispatch) {
   return {
     onChangeThemeColor: (v) => dispatch(changeThemeColor(v)),
     toggleSetBackground: (v) => dispatch(toggleBackGround(v)),
+    onChangeThemeSkin: (v) => dispatch(changeThemeSkin(v))
   };
 }
 

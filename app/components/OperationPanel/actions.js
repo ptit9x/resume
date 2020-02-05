@@ -20,10 +20,10 @@ export function toggleBackGround(v) {
   }
 }
 
-export function toggleThemeSkin(v) {
+export function changeThemeSkin(v) {
   return {
     type: LIGHT_THEME_SKIN,
-    lighThemeSkin: v,
+    themeSkin: v,
   }
 }
 
