@@ -31,7 +31,8 @@ function Socials() {
         </a>
       </li>
       <li>
-        <a className="ripple-centered"
+        <a
+          className="ripple-centered"
           href="https://huynhdn.com"
           target="_blank"
         >

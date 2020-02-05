@@ -5,20 +5,27 @@ import messages from './messages';
 import avatar from '../../../assets/images/uploads/rs-avatar-60x60.jpg';
 
 function References() {
-  const elements = [{
-    personSpeech: 'I confirm that New Company Ltd has been a customer of ours since',
-    personName: 'Hai',
-    personTitle: 'Hybrid-Technologies, Leader',
-  }, {
-    personSpeech: 'I confirm that New Company Ltd has been a customer of ours since',
-    personName: 'Bao',
-    personTitle: 'Hybrid-Technologies, BrSE',
-  }, {
-    personSpeech: 'I confirm that New Company Ltd has been a customer of ours since',
-    personName: 'Hung',
-    personTitle: 'FPT, Developer',
-  }]
-  
+  const elements = [
+    {
+      personSpeech:
+        'I confirm that New Company Ltd has been a customer of ours since',
+      personName: 'Hai',
+      personTitle: 'Hybrid-Technologies, Leader',
+    },
+    {
+      personSpeech:
+        'I confirm that New Company Ltd has been a customer of ours since',
+      personName: 'Bao',
+      personTitle: 'Hybrid-Technologies, BrSE',
+    },
+    {
+      personSpeech:
+        'I confirm that New Company Ltd has been a customer of ours since',
+      personName: 'Hung',
+      personTitle: 'FPT, Developer',
+    },
+  ];
+
   const ref = useRef(null);
   const [iSlide, setIslide] = useState(0);
   const [widthElement, setWidthElement] = useState(810);
@@ -30,7 +37,7 @@ function References() {
       setWidthElement(widthElement + width);
       setIslide(iSlide + 1);
     }
-  }
+  };
 
   const onChangePrev = () => {
     const width = ref.current ? ref.current.offsetWidth : 0;
@@ -38,14 +45,12 @@ function References() {
       setWidthElement(widthElement - width);
       setIslide(iSlide - 1);
     }
-  }
+  };
   return (
     <section id="references" className="section section-references">
       <div className="animate-up">
         <h2 className="section-title">
-          <FormattedMessage {...messages.title}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
         <div className="section-box">
           <div
@@ -71,39 +76,35 @@ function References() {
                   transform: `translate3d(-${widthElement}px, 0px, 0px)`,
                 }}
               >
-                {
-                  elements.map((v, i) => {
-                    return (
-                      <li
-                        style={{
-                          float: 'left',
-                          listStyle: 'none',
-                          position: 'relative',
-                          width: '810px',
-                        }}
-                        className="bx-clone"
-                        key={i}
-                      >
-                        <div className="ref-box">
-                          <div className="person-speech">
-                            <p>{v.personSpeech}</p>
-                          </div>
-                          <div className="person-info clearfix">
-                            <img
-                              className="person-img"
-                              src={avatar}
-                              alt="Headshot"
-                            />
-                            <div className="person-name-title">
-                              <span className="person-name">{v.personName}</span>
-                              <span className="person-title">{v.personTitle}</span>
-                            </div>
-                          </div>
+                {elements.map((v, i) => (
+                  <li
+                    style={{
+                      float: 'left',
+                      listStyle: 'none',
+                      position: 'relative',
+                      width: '810px',
+                    }}
+                    className="bx-clone"
+                    key={i}
+                  >
+                    <div className="ref-box">
+                      <div className="person-speech">
+                        <p>{v.personSpeech}</p>
+                      </div>
+                      <div className="person-info clearfix">
+                        <img
+                          className="person-img"
+                          src={avatar}
+                          alt="Headshot"
+                        />
+                        <div className="person-name-title">
+                          <span className="person-name">{v.personName}</span>
+                          <span className="person-title">{v.personTitle}</span>
                         </div>
-                      </li>
-                    )
-                  })
-                }
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="bx-controls" />

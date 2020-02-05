@@ -13,7 +13,7 @@ import './style.css';
 
 function CalendarSection({ locale }) {
   const [date, setDate] = useState(new Date());
-  const onChange = (date) => setDate(date);
+  const onChange = date => setDate(date);
 
   return (
     <section id="calendar" className="section section-calendar">
@@ -34,24 +34,30 @@ function CalendarSection({ locale }) {
                   <div className="date">
                     <span className="day">{date.getDate()}</span>
                     <span className="month">
-                      <FormattedMessage {...messages[moment(date).format('MMM')]}>{txt => txt}</FormattedMessage>{' '}
+                      <FormattedMessage
+                        {...messages[moment(date).format('MMM')]}
+                      >
+                        {txt => txt}
+                      </FormattedMessage>{' '}
                     </span>
                   </div>
                   <div className="week-day">
-                    <FormattedMessage {...messages[moment(date).format('dddd')]}>{txt => txt}</FormattedMessage>{' '}
+                    <FormattedMessage
+                      {...messages[moment(date).format('dddd')]}
+                    >
+                      {txt => txt}
+                    </FormattedMessage>{' '}
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="calendar-cont">
-            <Calendar
-              onChange={onChange}
-              value={date}
-              locale={locale}
-            />
+            <Calendar onChange={onChange} value={date} locale={locale} />
             <div className="calendar-busy-note">
-              <FormattedMessage {...messages.busyNote}>{txt => txt}</FormattedMessage>{' '}
+              <FormattedMessage {...messages.busyNote}>
+                {txt => txt}
+              </FormattedMessage>{' '}
             </div>
           </div>
         </div>
@@ -69,7 +75,4 @@ const mapStateToProps = createSelector(
   locale => ({ locale }),
 );
 
-
-export default connect(
-  mapStateToProps,
-)(CalendarSection);
+export default connect(mapStateToProps)(CalendarSection);

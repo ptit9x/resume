@@ -8,9 +8,7 @@ function Interests() {
     <section id="interests" className="section section-interests">
       <div className="animate-up">
         <h2 className="section-title">
-          <FormattedMessage {...messages.title}>
-            {txt => txt}
-          </FormattedMessage>{' '}
+          <FormattedMessage {...messages.title}>{txt => txt}</FormattedMessage>{' '}
         </h2>
         <div className="section-box">
           <p>

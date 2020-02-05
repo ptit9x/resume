@@ -14,7 +14,7 @@ export default defineMessages({
   },
   busyNote: {
     id: `${scope}.busyNote`,
-    defaultMessage: 'Sorry. I\'m not available on those days',
+    defaultMessage: "Sorry. I'm not available on those days",
   },
   Jan: {
     id: `${scope}.Jan`,

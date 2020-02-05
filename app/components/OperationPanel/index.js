@@ -1,6 +1,24 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 
-function OperationPanel() {
+import { useInjectReducer } from '../../utils/injectReducer';
+import reducer from './reducer';
+import { changeThemeColor, toggleBackGround } from './actions';
+import { makeSelectActiveColor, makeSelectToggleBackground } from './selectors';
+
+const key = "operation";
+
+function OperationPanel({
+  activeColor,
+  onChangeThemeColor,
+  showBackground,
+  toggleSetBackground,
+}) {
+  console.log(showBackground, " showBackgroundshowBackground");
+  useInjectReducer({ key, reducer });
   const colors = [
     'e83b35',
     'e8676b',
@@ -29,19 +47,11 @@ function OperationPanel() {
   ];
   const [showSetting, setShowSetting] = useState(false);
   const [lightThemeSkin, setLightThemeSkin] = useState(true);
-  const [activeColor, setActiveColor] = useState('07cb79');
-  const [showBackground, setShowBackground] = useState(true);
   const toggleSetting = () => {
     setShowSetting(!showSetting);
   };
   const toggleSkin = () => {
     setLightThemeSkin(!lightThemeSkin);
-  };
-  const changeColor = color => {
-    setActiveColor(color);
-  };
-  const toggleSetBackground = () => {
-    setShowBackground(!showBackground);
   };
   return (
     <div
@@ -90,7 +100,7 @@ function OperationPanel() {
                 }
                 data-color={v}
                 key={i}
-                onClick={() => changeColor(v)}
+                onClick={() => onChangeThemeColor(v)}
               >
                 <i className="rsicon rsicon-check" />
               </button>
@@ -98,7 +108,7 @@ function OperationPanel() {
           </div>
         </div>
         <div className="op-section">
-          <div className="op-theme-headimg" onClick={toggleSetBackground}>
+          <div className="op-theme-headimg" onClick={() => toggleSetBackground(!showBackground)}>
             <button
               type="button"
               className={
@@ -117,4 +127,32 @@ function OperationPanel() {
   );
 }
 
-export default OperationPanel;
+OperationPanel.propTypes = {
+  activeColor: PropTypes.string,
+  onChangeThemeColor: PropTypes.func.isRequired,
+  showBackground: PropTypes.bool,
+  toggleSetBackground: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = createStructuredSelector({
+  activeColor: makeSelectActiveColor(),
+  showBackground: makeSelectToggleBackground(),
+});
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onChangeThemeColor: (v) => dispatch(changeThemeColor(v)),
+    toggleSetBackground: (v) => dispatch(toggleBackGround(v)),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+export default compose(
+  withConnect,
+  memo,
+)(OperationPanel);
+

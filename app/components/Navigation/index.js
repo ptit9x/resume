@@ -18,7 +18,6 @@ export function Navigation({
   fixedMenu,
   onChangeFixedMenu,
   onChangeFixedMenuScrollTop,
-  mobileNavOpen,
 }) {
   useInjectReducer({ key, reducer });
   const offset = -50;

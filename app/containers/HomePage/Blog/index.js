@@ -29,11 +29,17 @@ function Blog() {
                   <span className="month">DEC</span>
                 </time>
                 <div className="post-tag">
-                  <a href="https://huynhdn.com/danh-muc/lap-trinh/nodejs/">#NodeJS</a>
-                  <a href="https://huynhdn.com/danh-muc/lap-trinh/react/">#React</a>
+                  <a href="https://huynhdn.com/danh-muc/lap-trinh/nodejs/">
+                    #NodeJS
+                  </a>
+                  <a href="https://huynhdn.com/danh-muc/lap-trinh/react/">
+                    #React
+                  </a>
                 </div>
                 <h3 className="post-title">
-                  <a href="https://huynhdn.com/lap-trinh/react/cac-thu-vien-ui-dang-dung-cho-reactjs">Các thư viện UI đáng dùng cho ReactJS</a>
+                  <a href="https://huynhdn.com/lap-trinh/react/cac-thu-vien-ui-dang-dung-cho-reactjs">
+                    Các thư viện UI đáng dùng cho ReactJS
+                  </a>
                 </h3>
                 <div className="post-info">
                   <a href="https://huynhdn.com/author/huynhdn/">
@@ -59,10 +65,14 @@ function Blog() {
                 </time>
                 <div className="post-tag">
                   <a href="https://huynhdn.com/danh-muc/he-thong/">#System</a>
-                  <a href="https://huynhdn.com/danh-muc/he-thong/google-cloud/">#Google Cloud</a>
+                  <a href="https://huynhdn.com/danh-muc/he-thong/google-cloud/">
+                    #Google Cloud
+                  </a>
                 </div>
                 <h3 className="post-title">
-                  <a href="https://huynhdn.com/he-thong/google-cloud/dang-ki-google-cloud-nhan-ngay-300-do-la">ĐĂNG KÝ TÀI KHOẢN GOOGLE CLOUD NHẬN $300 DÙNG 12 THÁNG.</a>
+                  <a href="https://huynhdn.com/he-thong/google-cloud/dang-ki-google-cloud-nhan-ngay-300-do-la">
+                    ĐĂNG KÝ TÀI KHOẢN GOOGLE CLOUD NHẬN $300 DÙNG 12 THÁNG.
+                  </a>
                 </h3>
                 <div className="post-info">
                   <a href="https://huynhdn.com/author/huynhdn/">

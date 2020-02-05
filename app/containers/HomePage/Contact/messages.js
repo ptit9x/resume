@@ -39,5 +39,5 @@ export default defineMessages({
   message: {
     id: `${scope}.message`,
     defaultMessage: 'message',
-  }
+  },
 });
