@@ -1,6 +1,32 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 
-function OperationPanel() {
+import { FormattedMessage } from 'react-intl';
+import { useInjectReducer } from '../../utils/injectReducer';
+import reducer from './reducer';
+import { changeThemeColor, toggleBackGround, changeThemeSkin } from './actions';
+import {
+  makeSelectActiveColor,
+  makeSelectToggleBackground,
+  makeSelectThemeSkin,
+} from './selectors';
+
+import messages from './messages';
+
+const key = 'operation';
+
+function OperationPanel({
+  activeColor,
+  onChangeThemeColor,
+  showBackground,
+  toggleSetBackground,
+  themeSkin,
+  onChangeThemeSkin,
+}) {
+  useInjectReducer({ key, reducer });
   const colors = [
     'e83b35',
     'e8676b',
@@ -28,20 +54,8 @@ function OperationPanel() {
     'a7d9a8',
   ];
   const [showSetting, setShowSetting] = useState(false);
-  const [lightThemeSkin, setLightThemeSkin] = useState(true);
-  const [activeColor, setActiveColor] = useState('07cb79');
-  const [showBackground, setShowBackground] = useState(true);
   const toggleSetting = () => {
     setShowSetting(!showSetting);
-  };
-  const toggleSkin = () => {
-    setLightThemeSkin(!lightThemeSkin);
-  };
-  const changeColor = color => {
-    setActiveColor(color);
-  };
-  const toggleSetBackground = () => {
-    setShowBackground(!showBackground);
   };
   return (
     <div
@@ -53,29 +67,37 @@ function OperationPanel() {
         height: 'auto',
       }}
     >
-      <div id="op-panel-btn" onClick={toggleSetting}>
+      <div id="op-panel-btn" role="button" tabIndex="0" onClick={toggleSetting}>
         <i className="rsicon rsicon-settings" />
       </div>
       <div className="op-content">
         <div className="op-section">
           <div className="op-theme-skin op-btn-group">
-            <button className="op-btn" data-value="light" onClick={toggleSkin}>
-              Light
+            <button
+              type="button"
+              className="op-btn"
+              onClick={() => onChangeThemeSkin('light')}
+            >
+              <FormattedMessage {...messages.light} />
             </button>
-            <button type="button" className="op-btn" data-value="dark" onClick={toggleSkin}>
-              Dark
+            <button
+              type="button"
+              className="op-btn"
+              onClick={() => onChangeThemeSkin('dark')}
+            >
+              <FormattedMessage {...messages.dark} />
             </button>
             <div className="op-btn-bar">
               <span
                 className="op-btn-bar-line"
-                style={{ left: '93.5px', with: '92px' }}
+                style={{ left: themeSkin === 'light' ? '0px' : '100px' }}
               />
             </div>
           </div>
         </div>
         <div className="op-section">
           <div className="op-theme-colors">
-            {colors.map((v, i) => (
+            {colors.map(v => (
               <button
                 type="button"
                 className={
@@ -84,8 +106,8 @@ function OperationPanel() {
                     : 'ripple-centered'
                 }
                 data-color={v}
-                key={i}
-                onClick={() => changeColor(v)}
+                key={v}
+                onClick={() => onChangeThemeColor(v)}
               >
                 <i className="rsicon rsicon-check" />
               </button>
@@ -93,7 +115,12 @@ function OperationPanel() {
           </div>
         </div>
         <div className="op-section">
-          <div className="op-theme-headimg" onClick={toggleSetBackground}>
+          <div
+            className="op-theme-headimg"
+            role="button"
+            tabIndex="0"
+            onClick={() => toggleSetBackground(!showBackground)}
+          >
             <button
               type="button"
               className={
@@ -103,7 +130,7 @@ function OperationPanel() {
               <span className="op-check">
                 <i className="rsicon rsicon-check" />
               </span>{' '}
-              Show Header Background Image
+              <FormattedMessage {...messages.showBgImage} />
             </button>
           </div>
         </div>
@@ -112,4 +139,35 @@ function OperationPanel() {
   );
 }
 
-export default OperationPanel;
+OperationPanel.propTypes = {
+  activeColor: PropTypes.string,
+  onChangeThemeColor: PropTypes.func.isRequired,
+  showBackground: PropTypes.bool,
+  toggleSetBackground: PropTypes.func.isRequired,
+  themeSkin: PropTypes.string,
+  onChangeThemeSkin: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = createStructuredSelector({
+  activeColor: makeSelectActiveColor(),
+  showBackground: makeSelectToggleBackground(),
+  themeSkin: makeSelectThemeSkin(),
+});
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onChangeThemeColor: v => dispatch(changeThemeColor(v)),
+    toggleSetBackground: v => dispatch(toggleBackGround(v)),
+    onChangeThemeSkin: v => dispatch(changeThemeSkin(v)),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+export default compose(
+  withConnect,
+  memo,
+)(OperationPanel);

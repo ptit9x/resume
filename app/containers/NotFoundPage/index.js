@@ -6,6 +6,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+
+import messages from './messages';
 
 export default function NotFound() {
   return (
@@ -13,9 +16,11 @@ export default function NotFound() {
       <h2>
         4<span>0</span>4
       </h2>
-      <p>Ooops! This page doesn't even exist</p>
+      <p>
+        <FormattedMessage {...messages.content}>{txt => txt}</FormattedMessage>{' '}
+      </p>
       <Link className="btn btn-lg btn-border" to="/">
-        Go To The Homepage?
+        <FormattedMessage {...messages.gohome}>{txt => txt}</FormattedMessage>{' '}
       </Link>
     </div>
   );

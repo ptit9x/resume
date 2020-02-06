@@ -7,13 +7,9 @@ function ScrollTop() {
   };
   return (
     <div>
-      <a
-        className="btn-scroll-top"
-        onClick={backToTop}
-        style={{ display: 'inline' }}
-      >
+      <button type="button" className="btn-scroll-top" onClick={backToTop}>
         <i className="rsicon rsicon-arrow-up" />
-      </a>
+      </button>
       <div id="overlay" />
     </div>
   );

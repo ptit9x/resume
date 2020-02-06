@@ -1,0 +1,31 @@
+.react-calendar {
+	width: 100%;
+	border: none;
+	margin-bottom: 35px;
+	background-color: transparent;
+}
+
+.react-calendar button {
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	font-size: 16px;
+}
+.react-calendar__navigation button {
+	font-size: 18px;
+	color: #000;
+}
+
+.theme-skin-dark .react-calendar__navigation button,
+.theme-skin-dark .react-calendar button {
+	color: #d4d4d5;
+}
+
+abbr[title] {
+	color: #757575;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1;
+	border-bottom: none;
+	text-decoration: none;
+}

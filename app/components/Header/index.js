@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import './header.css';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
+import { animateScroll as scroll } from 'react-scroll';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
 
-function Header() {
-  const offset = -50;
-  const duration = 300;
-  const [fixedMenu, setFixedMenu] = useState(false);
+import Navigation from '../Navigation';
+import './header.css';
+import { makeSelectLocale } from '../../containers/LanguageProvider/selectors';
+import { changeLocale } from '../../containers/LanguageProvider/actions';
+import {
+  makeSelectFixedMenu,
+  makeSelectMobileNavOpen,
+} from '../Navigation/selectors';
+import { changeMobileNavOpen } from '../Navigation/actions';
+
+export function Header({
+  fixedMenu,
+  locale,
+  onChangeLocale,
+  mobileNavOpen,
+  onChangeMobileNavOpen,
+}) {
   const scrollToTop = () => scroll.scrollToTop();
-  const handleSetActive = () => setFixedMenu(true);
-  const handleSetInactive = () => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY === 0) {
-        setFixedMenu(false);
-      }
-    });
-  };
   return (
     <header className="header">
       <div className="head-bg" />
@@ -22,136 +30,28 @@ function Header() {
         <div className="head-bar-inner">
           <div className="row">
             <div className="col-sm-3 col-xs-6">
-              <a className="logo" onClick={scrollToTop}>
-                <span>RS</span>card
+              <a className="logo" onClick={scrollToTop} href="/">
+                <span>CV</span>HuynhDN
               </a>
             </div>
             <div className="col-sm-9 col-xs-6">
               <div className="nav-wrap">
                 <nav id="nav" className="nav">
-                  <ul className="clearfix">
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="about"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                        ignoreCancelEvents={false}
-                      >
-                        About <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="skills"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                      >
-                        Skills <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="portfolio"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                        onSetInactive={handleSetInactive}
-                      >
-                        Portfolio <span />
-                      </Link>{' '}
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="experience"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        Experience <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="references"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        References <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="calendar"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        Calendar <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="blog"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        Blog <span />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        activeClass="contact"
-                        to="contact"
-                        spy
-                        smooth
-                        hashSpy
-                        offset={offset}
-                        duration={duration}
-                        onSetActive={handleSetActive}
-                      >
-                        Contact <span />
-                        <span />
-                      </Link>
-                    </li>
-                  </ul>
+                  <Navigation />
                 </nav>
-                <button type="button" className="btn-mobile btn-mobile-nav">Menu</button>
-                <button type="button" className="btn-sidebar btn-sidebar-open">
-                  <i className="rsicon rsicon-menu" />
+                <button
+                  type="button"
+                  className="btn-mobile btn-mobile-nav"
+                  onClick={() => onChangeMobileNavOpen(!mobileNavOpen)}
+                >
+                  Menu
+                </button>
+                <button
+                  type="button"
+                  className="btn-primary btn-sidebar-open"
+                  onClick={() => onChangeLocale(locale === 'en' ? 'vi' : 'en')}
+                >
+                  {locale}
                 </button>
               </div>
             </div>
@@ -162,4 +62,33 @@ function Header() {
   );
 }
 
-export default Header;
+Header.propTypes = {
+  locale: PropTypes.string,
+  fixedMenu: PropTypes.bool,
+  onChangeLocale: PropTypes.func.isRequired,
+  mobileNavOpen: PropTypes.bool,
+  onChangeMobileNavOpen: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = createStructuredSelector({
+  fixedMenu: makeSelectFixedMenu(),
+  locale: makeSelectLocale(),
+  mobileNavOpen: makeSelectMobileNavOpen(),
+});
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onChangeLocale: lang => dispatch(changeLocale(lang)),
+    onChangeMobileNavOpen: v => dispatch(changeMobileNavOpen(v)),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+export default compose(
+  withConnect,
+  memo,
+)(Header);

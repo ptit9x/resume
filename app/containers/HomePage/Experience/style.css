@@ -1,0 +1,60 @@
+.section-experience .timeline .timeline-bar {
+  top: 80px;
+  height: 860px;
+}
+.section-experience .timeline .timeline-inner {
+  height: 999px;
+}
+.section-experience .timeline-box1 {
+  position: absolute;
+  left: 0px;
+  top: 730px;
+}
+.section-experience .timeline-box2 {
+  position: absolute;
+  right: 0px;
+  top: 600px;
+}
+.section-experience .timeline-box3 {
+  position: absolute;
+  left: 0px;
+  top: 375px;
+}
+.section-experience .timeline-box4 {
+  position: absolute;
+  right: 0px;
+  top: 70px;
+}
+.section-experience .timeline-box5 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+@media (max-width: 900px) {
+  .section-experience .timeline .timeline-inner {
+    height: 1200px;
+  }
+  .section-experience .timeline-box3 {
+    top: 460px;
+  }
+  .section-experience .timeline-box1 {
+    top: 830px;
+  }
+}
+
+@media (max-width: 650px) {
+  .section-experience .timeline-box1,
+  .section-experience .timeline-box2,
+  .section-experience .timeline-box3,
+  .section-experience .timeline-box4,
+  .section-experience .timeline-box5 {
+    position: relative;
+    top: inherit;
+  }
+  .section-experience .timeline .timeline-inner {
+    height: inherit;
+  }
+  .section-experience .timeline .timeline-bar {
+    display: none;
+  }
+}
