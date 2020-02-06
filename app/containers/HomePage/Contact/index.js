@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
@@ -16,7 +17,7 @@ function Contact({ google }) {
 
   const isRequired = value => (value ? '' : 'Please fill out this field.');
   const isEmail = email => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/;
     if (!re.test(String(email).toLowerCase())) {
       return 'Please fill a valid email.';
     }
@@ -69,7 +70,7 @@ function Contact({ google }) {
         .map(validate => validate(value))
         .filter(v => v.length > 0);
       if (errors && errors.length > 0) {
-        countError++;
+        countError += 1;
       }
       cloneState[key].errorMessage =
         errors && errors.length > 0 ? errors.join(', ') : '';
@@ -78,7 +79,7 @@ function Contact({ google }) {
     });
     setState(cloneState);
     if (countError <= 0) {
-      console.log(data, 'call API or write file');
+      // console.log(data, 'call API or write file');
     }
   };
 
@@ -102,32 +103,32 @@ function Contact({ google }) {
               <form className="contactForm">
                 <FormInput
                   className="contact-name"
-                  name="name"
-                  data={state.name}
+                  formName="name"
+                  formValue={state.name}
                   formatMessage={messages.labelName}
                   onUpdateState={onUpdateState}
                 />
                 <FormInput
                   className="contact-email"
-                  name="email"
-                  data={state.email}
+                  formName="email"
+                  formValue={state.email}
                   formatMessage={messages.labelEmail}
                   onUpdateState={onUpdateState}
                 />
                 <FormInput
                   className="contact-subject"
-                  name="subject"
-                  data={state.subject}
+                  formName="subject"
+                  formValue={state.subject}
                   formatMessage={messages.subject}
                   onUpdateState={onUpdateState}
                 />
                 <FormInput
                   className="contact-message"
-                  name="message"
-                  data={state.message}
+                  formName="message"
+                  formValue={state.message}
                   formatMessage={messages.message}
                   onUpdateState={onUpdateState}
-                  textarea
+                  isTextarea
                 />
                 <span className="btn-outer btn-primary-outer ripple">
                   <input
@@ -198,6 +199,10 @@ function Contact({ google }) {
     </section>
   );
 }
+
+Contact.propTypes = {
+  google: PropTypes.any,
+};
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyCCyEOVGDcJhJX9_5LPohsj_7NKws4ad0Q',

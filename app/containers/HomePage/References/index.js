@@ -7,18 +7,21 @@ import avatar from '../../../assets/images/uploads/rs-avatar-60x60.jpg';
 function References() {
   const elements = [
     {
+      id: 1,
       personSpeech:
         'I confirm that New Company Ltd has been a customer of ours since',
       personName: 'Hai',
       personTitle: 'Hybrid-Technologies, Leader',
     },
     {
+      id: 2,
       personSpeech:
         'I confirm that New Company Ltd has been a customer of ours since',
       personName: 'Bao',
       personTitle: 'Hybrid-Technologies, BrSE',
     },
     {
+      id: 3,
       personSpeech:
         'I confirm that New Company Ltd has been a customer of ours since',
       personName: 'Hung',
@@ -76,7 +79,7 @@ function References() {
                   transform: `translate3d(-${widthElement}px, 0px, 0px)`,
                 }}
               >
-                {elements.map((v, i) => (
+                {elements.map(v => (
                   <li
                     style={{
                       float: 'left',
@@ -85,7 +88,7 @@ function References() {
                       width: '810px',
                     }}
                     className="bx-clone"
-                    key={i}
+                    key={v.id}
                   >
                     <div className="ref-box">
                       <div className="person-speech">
@@ -111,14 +114,14 @@ function References() {
           </div>
           <div className="ref-slider-nav">
             <span id="ref-slider-prev" className="slider-prev">
-              <a className="bx-next" onClick={onChangeNext}>
+              <button className="bx-next" type="button" onClick={onChangeNext}>
                 <i className="rsicon rsicon-chevron_right" />
-              </a>
+              </button>
             </span>
             <span id="ref-slider-next" className="slider-next">
-              <a className="bx-prev" onClick={onChangePrev}>
+              <button className="bx-prev" type="button" onClick={onChangePrev}>
                 <i className="rsicon rsicon-chevron_left" />
-              </a>
+              </button>
             </span>
           </div>
         </div>

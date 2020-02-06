@@ -2,6 +2,7 @@
 	width: 100%;
 	border: none;
 	margin-bottom: 35px;
+	background-color: transparent;
 }
 
 .react-calendar button {
@@ -13,6 +14,11 @@
 .react-calendar__navigation button {
 	font-size: 18px;
 	color: #000;
+}
+
+.theme-skin-dark .react-calendar__navigation button,
+.theme-skin-dark .react-calendar button {
+	color: #d4d4d5;
 }
 
 abbr[title] {

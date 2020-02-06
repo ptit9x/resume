@@ -77,5 +77,8 @@
   "boilerplate.components.HomePage.Contact.labelPhone": "Phone",
   "boilerplate.components.HomePage.Contact.description": "Feel free to contact me",
   "boilerplate.components.HomePage.Contact.subject": "Subject",
-  "boilerplate.components.HomePage.Contact.message": "Message"
+  "boilerplate.components.HomePage.Contact.message": "Message",
+  "boilerplate.components.OperationPanel.light": "Light",
+  "boilerplate.components.OperationPanel.dark": "dark",
+  "boilerplate.components.OperationPanel.showBgImage": "Show Header Background Image"
 }

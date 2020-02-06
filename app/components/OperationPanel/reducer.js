@@ -5,12 +5,16 @@
  */
 
 import produce from 'immer';
-import { CHANGE_THEME_COLOR, TOGGLE_BACKGROUND_HEADER, LIGHT_THEME_SKIN } from './constants';
+import {
+  CHANGE_THEME_COLOR,
+  TOGGLE_BACKGROUND_HEADER,
+  LIGHT_THEME_SKIN,
+} from './constants';
 
 export const initialState = {
-  activeColor: "07cb79",
+  activeColor: '07cb79',
   showBackground: true,
-  themeSkin: "light",
+  themeSkin: 'light',
 };
 
 /* eslint-disable default-case, no-param-reassign */

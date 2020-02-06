@@ -77,5 +77,8 @@
   "boilerplate.components.HomePage.Contact.labelPhone": "Điện thoại",
   "boilerplate.components.HomePage.Contact.description": "Liên lạc với tôi",
   "boilerplate.components.HomePage.Contact.subject": "Tiêu đề",
-  "boilerplate.components.HomePage.Contact.message": "Tin nhắn"
+  "boilerplate.components.HomePage.Contact.message": "Tin nhắn",
+  "boilerplate.components.OperationPanel.light": "Sáng",
+  "boilerplate.components.OperationPanel.dark": "Tối",
+  "boilerplate.components.OperationPanel.showBgImage": "Hiển thị ảnh nền Header"
 }

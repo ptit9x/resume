@@ -23,10 +23,14 @@ const makeSelectToggleBackground = () =>
     operationState => operationState.showBackground,
   );
 
-  const makeSelectThemeSkin = () =>
+const makeSelectThemeSkin = () =>
   createSelector(
     selectOperationPanel,
     operationState => operationState.themeSkin,
   );
 
-export { makeSelectActiveColor, makeSelectToggleBackground, makeSelectThemeSkin };
+export {
+  makeSelectActiveColor,
+  makeSelectToggleBackground,
+  makeSelectThemeSkin,
+};

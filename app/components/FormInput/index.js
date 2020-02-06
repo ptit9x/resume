@@ -1,49 +1,50 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 function FormInput({
   className,
-  name,
-  data,
+  formName,
+  formValue,
   formatMessage,
   onUpdateState,
-  textarea,
+  isTextarea,
 }) {
   const handleFocus = event => {
     const { name } = event.target;
-    const clone = Object.assign({}, data);
+    const clone = Object.assign({}, formValue);
     clone.used = true;
     onUpdateState(name, clone);
   };
 
   const handleInput = event => {
     const { name, value } = event.target;
-    const clone = Object.assign({}, data);
+    const clone = Object.assign({}, formValue);
     clone.value = value;
     onUpdateState(name, clone);
   };
 
   const handleInputValidation = event => {
     const { name, value } = event.target;
-    const clone = Object.assign({}, data);
+    const clone = Object.assign({}, formValue);
     clone.used = !!value;
-    const errors = data.validates.map(validate => validate(value));
+    const errors = formValue.validates.map(validate => validate(value));
     clone.errorMessage = errors && errors.length > 0 ? errors.join(', ') : '';
     onUpdateState(name, clone);
   };
 
   return (
     <div
-      className={`input-field ${data.errorMessage.length <= 0 ? '' : 'error'}${
-        data.used ? ' used' : ''
-      }`}
+      className={`input-field 
+        ${formValue.errorMessage.length <= 0 ? '' : 'error'}
+        ${formValue.used ? ' used' : ''}`}
     >
-      {textarea ? (
+      {isTextarea ? (
         <textarea
           className={className}
           rows={4}
-          name={name}
-          value={data.value}
+          name={formName}
+          value={formValue.value}
           onFocus={handleFocus}
           onChange={handleInput}
           onBlur={handleInputValidation}
@@ -52,8 +53,8 @@ function FormInput({
         <input
           className={className}
           type="text"
-          name={name}
-          value={data.value}
+          name={formName}
+          value={formValue.value}
           onFocus={handleFocus}
           onChange={handleInput}
           onBlur={handleInputValidation}
@@ -66,5 +67,14 @@ function FormInput({
     </div>
   );
 }
+
+FormInput.propTypes = {
+  className: PropTypes.string,
+  formName: PropTypes.string,
+  formValue: PropTypes.object,
+  formatMessage: PropTypes.object,
+  onUpdateState: PropTypes.func,
+  isTextarea: PropTypes.bool,
+};
 
 export default FormInput;

@@ -13,13 +13,13 @@ function Portfolio() {
         <div className="filter">
           <div className="filter-inner">
             <div className="filter-btn-group">
-              <button data-filter="*" className="active">
+              <button className="active" type="button">
                 <FormattedMessage {...messages.all}>
                   {txt => txt}
                 </FormattedMessage>{' '}
               </button>
-              <button data-filter=".photography">Photography</button>
-              <button data-filter=".nature">Nature</button>
+              <button type="button">BackEnd</button>
+              <button type="button">FrontEnd</button>
             </div>
             <div className="filter-bar">
               <span
@@ -43,44 +43,23 @@ function Portfolio() {
                 <img src={portfolio1} alt="" />
                 <figcaption className="portfolio-caption">
                   <div className="portfolio-caption-inner">
-                    <h3 className="portfolio-title">Street Photography</h3>
-                    <h4 className="portfolio-cat">Photography</h4>
+                    <h3 className="portfolio-title">Temando</h3>
+                    <h4 className="portfolio-cat">
+                      Carrier Integration Logistic
+                    </h4>
                     <div className="btn-group">
                       <a
-                        className="btn-link"
-                        href="http://bit.ly/1YtB8he"
-                        target="_blank"
-                      >
-                        <i className="rsicon rsicon-link" />
-                      </a>
-                      <a
                         className="portfolioFancybox btn-zoom"
-                        data-fancybox-group="portfolioFancybox1"
                         href="#portfolio1-inline1"
                       >
                         <i className="rsicon rsicon-eye" />
                       </a>
-                      <a
-                        className="portfolioFancybox hidden"
-                        data-fancybox-group="portfolioFancybox1"
-                        href="#portfolio1-inline2"
-                      />
-                      <a
-                        className="portfolioFancybox hidden"
-                        data-fancybox-group="portfolioFancybox1"
-                        href="#portfolio1-inline3"
-                      />
                     </div>
                   </div>
                 </figcaption>
               </figure>
-              {/* Start: Portfolio Inline Boxes */}
               <div id="portfolio1-inline1" className="fancybox-inline-box">
-                <div
-                  className="inline-embed"
-                  data-embed-type="image"
-                  data-embed-url="\.\./\.\./assets/imgages/uploads/portfolio/portfolio-thumb-05-large.jpg"
-                />
+                <div className="inline-embed" />
                 <div className="inline-cont">
                   <h2 className="inline-title">
                     Street photography is photography that features the chance
@@ -98,47 +77,6 @@ function Portfolio() {
                   </div>
                 </div>
               </div>
-              <div id="portfolio1-inline2" className="fancybox-inline-box">
-                <div
-                  className="inline-embed"
-                  data-embed-type="image"
-                  data-embed-url="\.\./\.\./assets/imgages/uploads/portfolio/portfolio-thumb-01-large.jpg"
-                />
-                <div className="inline-cont">
-                  <div className="inline-text">
-                    <h2 className="inline-title">Framing and timing</h2>
-                    <p>
-                      Framing and timing can be key aspects of the craft with
-                      the aim of some street photography being to create images
-                      at a decisive or poignant moment. Street photography can
-                      focus on emotions displayed, thereby also recording
-                      people's history from an emotional point of view.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div id="portfolio1-inline3" className="fancybox-inline-box">
-                <div
-                  className="inline-embed"
-                  data-embed-type="iframe"
-                  data-embed-url="https://player.vimeo.com/video/118244244"
-                />
-                <div className="inline-cont">
-                  <div className="inline-text">
-                    <h2 className="inline-title">
-                      A Look Into Documenting Street Fashion Photography
-                    </h2>
-                    <p>
-                      HB Nam is an internationally known street fashion
-                      photographer. In this Leica Camera Portrait, Nam explains
-                      how he started in photography and what photography means
-                      to him. For Nam, it's about documenting what's around him
-                      and the concentration required to achieve a good shot.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* End: Portfolio Inline Boxes */}
             </div>
           </div>
           {/* .grid-item */}
@@ -148,10 +86,7 @@ function Portfolio() {
           >
             <div className="grid-box">
               <figure className="portfolio-figure">
-                <img
-                  src="img/uploads/portfolio/portfolio-thumb-11-289x281.jpg"
-                  alt=""
-                />
+                <img src={portfolio1} alt="" />
                 <figcaption className="portfolio-caption">
                   <div className="portfolio-caption-inner">
                     <h3 className="portfolio-title">Suspension Bridge</h3>
@@ -244,10 +179,7 @@ function Portfolio() {
           >
             <div className="grid-box">
               <figure className="portfolio-figure">
-                <img
-                  src="img/uploads/portfolio/portfolio-thumb-08-289x281.jpg"
-                  alt=""
-                />
+                <img src={portfolio1} alt="" />
                 <figcaption className="portfolio-caption">
                   <div className="portfolio-caption-inner">
                     <h3 className="portfolio-title">Rocky Mountains</h3>
@@ -263,20 +195,10 @@ function Portfolio() {
                       <a
                         className="portfolioFancybox btn-zoom"
                         data-fancybox-group="portfolioFancybox3"
-                        href="#portfolio3-inline1"
+                        href="http://bit.ly/1YtB8he"
                       >
                         <i className="rsicon rsicon-eye" />
                       </a>
-                      <a
-                        className="portfolioFancybox hidden"
-                        data-fancybox-group="portfolioFancybox3"
-                        href="#portfolio3-inline2"
-                      />
-                      <a
-                        className="portfolioFancybox hidden"
-                        data-fancybox-group="portfolioFancybox3"
-                        href="#portfolio3-inline3"
-                      />
                     </div>
                   </div>
                 </figcaption>
@@ -310,7 +232,7 @@ function Portfolio() {
         </div>
         <div className="grid-more">
           <span className="ajax-loader" />
-          <button className="btn btn-border ripple">
+          <button className="btn btn-border ripple" type="button">
             <i className="rsicon rsicon-add" />
           </button>
         </div>

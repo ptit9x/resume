@@ -13,7 +13,7 @@ import './style.css';
 
 function CalendarSection({ locale }) {
   const [date, setDate] = useState(new Date());
-  const onChange = date => setDate(date);
+  const onChange = d => setDate(d);
 
   return (
     <section id="calendar" className="section section-calendar">
@@ -53,7 +53,12 @@ function CalendarSection({ locale }) {
             </div>
           </div>
           <div className="calendar-cont">
-            <Calendar onChange={onChange} value={date} locale={locale} />
+            <Calendar
+              onChange={onChange}
+              value={date}
+              locale={locale}
+              showNeighboringMonth={false}
+            />
             <div className="calendar-busy-note">
               <FormattedMessage {...messages.busyNote}>
                 {txt => txt}

@@ -79,9 +79,7 @@ function About() {
                       </FormattedMessage>{' '}
                     </strong>
                     <span className="cont">
-                      <Link to={`tel:${profile.email}`}>
-                        {profile.textPhone}
-                      </Link>
+                      <a href={`tel:${profile.email}`}>{profile.textPhone}</a>
                     </span>
                   </li>
                   {/* <li className="clearfix">
@@ -103,7 +101,7 @@ function About() {
         </div>
         <div className="section-txt-btn">
           <p>
-            <Link className="btn btn-lg btn-border ripple" to="#">
+            <Link className="btn btn-lg btn-border ripple" to="/">
               <FormattedMessage {...messages.downloadcv}>
                 {txt => txt}
               </FormattedMessage>{' '}

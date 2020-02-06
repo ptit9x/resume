@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 
 import { useInjectReducer } from '../../utils/injectReducer';
@@ -180,9 +180,7 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeFixedMenu: v =>
-      // hide menu mobile when click to menu mobile
-      dispatch(changeMobileNavOpen(false)),
+    onChangeFixedMenu: () => dispatch(changeMobileNavOpen(false)), // hide menu mobile when click to menu mobile
     onChangeFixedMenuScrollTop: () => {
       window.addEventListener('scroll', () => {
         if (window.scrollY === 0) {
