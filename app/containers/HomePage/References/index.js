@@ -8,22 +8,19 @@ function References() {
   const elements = [
     {
       id: 1,
-      personSpeech:
-        'I confirm that New Company Ltd has been a customer of ours since',
+      personSpeech: 'updating...',
       personName: 'Hai',
       personTitle: 'Hybrid-Technologies, Leader',
     },
     {
       id: 2,
-      personSpeech:
-        'I confirm that New Company Ltd has been a customer of ours since',
+      personSpeech: 'updating...',
       personName: 'Bao',
       personTitle: 'Hybrid-Technologies, BrSE',
     },
     {
       id: 3,
-      personSpeech:
-        'I confirm that New Company Ltd has been a customer of ours since',
+      personSpeech: 'updating...',
       personName: 'Hung',
       personTitle: 'FPT, Developer',
     },
