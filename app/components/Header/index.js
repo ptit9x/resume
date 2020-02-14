@@ -30,7 +30,7 @@ export function Header({
         <div className="head-bar-inner">
           <div className="row">
             <div className="col-sm-3 col-xs-6">
-              <a className="logo" onClick={scrollToTop} href="/">
+              <a className="logo" href="https://huynhdn.com/">
                 <span>CV</span>HuynhDN
               </a>
             </div>

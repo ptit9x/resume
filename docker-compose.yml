@@ -10,9 +10,8 @@ services:
       my-network:
         aliases:
           - resume.local
-    expose:
-      - 80
-      - 443
+    ports:
+      - 80:3000
 
 networks:
   my-network:
