@@ -1,0 +1,18 @@
+version: "3"
+services:
+  fe:
+    container_name: "resume-fe"
+    hostname: "resume-fe"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        aliases:
+          - resume.local
+    expose:
+      - 80
+      - 443
+
+networks:
+  my-network:
